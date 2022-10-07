@@ -1,6 +1,6 @@
 package co.konecta.sura.api.Modelos;
 
-public class LoginInfo {
+public class LoginProactive {
     private String userName;
     private String password;
 

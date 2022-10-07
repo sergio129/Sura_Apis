@@ -1,6 +1,6 @@
 package co.konecta.sura.api.stepdefinitions.proactive;
 
-import co.konecta.sura.api.Modelos.LoginInfo;
+import co.konecta.sura.api.Modelos.LoginProactive;
 import co.konecta.sura.api.Modelos.ProactiveModel;
 import co.konecta.sura.api.Tareas.Proactive.AutenticacionTask;
 import co.konecta.sura.api.Tareas.Proactive.CierreTareaProactiveTask;
@@ -18,7 +18,6 @@ import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 import java.util.List;
 import java.util.Map;
 
-import static co.konecta.sura.api.VariablesSesion.VaraiblesSesion.GUARDARTOKEN;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.hamcrest.core.IsEqual.equalTo;
 
@@ -27,7 +26,7 @@ public class AutenticacionProactiveStepDefinitions {
     public static final String restApiUrlProactive = "https://saralabs.grupokonecta.co:8591/api";
     Actor actor = new Actor("Usuario");
     private ProactiveModel datos = new ProactiveModel();
-    private LoginInfo datoslogin = new LoginInfo();
+    private LoginProactive datoslogin = new LoginProactive();
 
     @Before
     public void setUp() {

@@ -1,11 +1,10 @@
 package co.konecta.sura.api.Tareas.Proactive;
 
-import co.konecta.sura.api.Modelos.LoginInfo;
+import co.konecta.sura.api.Modelos.LoginProactive;
 import co.konecta.sura.api.interaccion.Post;
 
 import io.restassured.http.ContentType;
 import lombok.AllArgsConstructor;
-import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
@@ -15,7 +14,7 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 @AllArgsConstructor
 public class AutenticacionTask implements Task {
 
-    private final LoginInfo datoslogin;
+    private final LoginProactive datoslogin;
 
 
     @Override
@@ -34,7 +33,7 @@ public class AutenticacionTask implements Task {
 
     }
 
-    public static Performable InfoProactive(LoginInfo datoslogin) {
+    public static Performable InfoProactive(LoginProactive datoslogin) {
 
         return instrumented(AutenticacionTask.class, datoslogin);
     }

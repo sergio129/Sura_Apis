@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         glue = "co.konecta.sura.api.stepdefinitions",
         features = "src/test/resources/features/",
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        tags = "@TestCierreTareasPoractive",
+        tags = "@TesLoginSara",
         monochrome = true
 
 )

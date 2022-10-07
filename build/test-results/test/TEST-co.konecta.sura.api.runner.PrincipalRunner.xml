@@ -20,10 +20,12 @@
 -------------------------------------------------------------------------------------
 
 [Test worker] INFO  - Test Suite Started: poder hacer cierre de tareas de monitoreo
-[Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/login.feature
+[Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/LoginSara.feature
+[Test worker] INFO  - Test Suite Started: Poder loguarse en sara y generar el token
+[Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/loginProective.feature
 [Test worker] INFO  - Test Suite Started: inicio de sesion  de usuario
-[Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/CierreTareaProactive.feature
-[Test worker] INFO  - Test Suite Started: poder hacer cierre de tareas de monitoreo
+[Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/LoginSara.feature
+[Test worker] INFO  - Test Suite Started: Poder loguarse en sara y generar el token
 ?????????????????????????????????????????????????????????????????????????????????????
 ? Share your Cucumber Report with your team at https://reports.cucumber.io          ?
 ? Activate publishing with one of the following:                                    ?
