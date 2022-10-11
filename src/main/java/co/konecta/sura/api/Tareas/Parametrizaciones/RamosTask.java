@@ -13,19 +13,20 @@ import net.serenitybdd.screenplay.Task;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 @AllArgsConstructor
 public class RamosTask implements Task {
-    private final ParametrizacionRamosModel Ramos;
+    private final ParametrizacionRamosModel ramosModel;
 
     @Override
     public <T extends Actor> void performAs(T sergio) {
         sergio.attemptsTo(Post.to("/branchs/save")
                 .with(requestSpecification -> requestSpecification
-                        .contentType(ContentType.JSON).body(Ramos)));
+                        .contentType(ContentType.JSON).body(ramosModel)));
 
 
     }
 
-    public static RamosTask EscribirDatos(ParametrizacionRamosModel Ramos) {
-        return instrumented(RamosTask.class, Ramos);
+    public static RamosTask EscribirDatos(ParametrizacionRamosModel ramosModel) {
+        return new RamosTask(ramosModel);
+
     }
 
 }

@@ -6,7 +6,6 @@ import co.konecta.sura.api.stepdefinitions.LoginSara.LoginSaraStepDefinitions;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 
@@ -27,12 +26,10 @@ public class RamosStepDefinitions {
     }
 
 
-
     @And("Ingresamos  Linea {string} , Nombre{string}, Token{string}")
-    public void ingresamosLineaNombreToken(String Linea, String branch, String arg2) {
-
+    public void ingresamosLineaNombreToken(String line, String branch, String arg2) {
+        this.ramosModel.setLine(line);
         this.ramosModel.setBranch(branch);
-        this.ramosModel.setLinea(Linea);
         this.ramosModel.setToken(LoginSaraStepDefinitions.Remplazardatos());
         actor.attemptsTo(RamosTask.EscribirDatos(ramosModel));
     }
