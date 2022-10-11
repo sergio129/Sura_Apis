@@ -1,4 +1,4 @@
-package co.konecta.sura.api.stepdefinitions;
+package co.konecta.sura.api.stepdefinitions.LoginEjemplo;
 
 import co.konecta.sura.api.Tareas.EjemploTarea;
 import co.konecta.sura.api.questions.ResponseCode;

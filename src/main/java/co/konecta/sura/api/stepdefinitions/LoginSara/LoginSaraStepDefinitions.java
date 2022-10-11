@@ -10,7 +10,7 @@ import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 
 public class LoginSaraStepDefinitions {
 
-    private static final String restApiUrlSara = "https://saralabs.grupokonecta.co:8591/api";
+    public static final String restApiUrlSara = "https://saralabs.grupokonecta.co:8591/api";
     Actor actor = Actor.named("Sergio");
     private  LoginSaraModel datos = new LoginSaraModel();
 
