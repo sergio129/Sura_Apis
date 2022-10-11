@@ -2,15 +2,16 @@ package co.konecta.sura.api.Modelos;
 
 public class ParametrizacionRamosModel {
 
-    private int Linea;
+    private String Linea;
     private String branch;
     private String Token;
 
-    public int getLinea() {
+
+    public String getLinea() {
         return Linea;
     }
 
-    public void setLinea(int linea) {
+    public void setLinea(String linea) {
         Linea = linea;
     }
 

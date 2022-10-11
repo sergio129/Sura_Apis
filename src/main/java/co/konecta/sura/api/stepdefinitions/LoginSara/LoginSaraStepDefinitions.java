@@ -5,6 +5,7 @@ import co.konecta.sura.api.Tareas.LoginSara.LoginSaraTask;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
+import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 
@@ -36,6 +37,15 @@ public class LoginSaraStepDefinitions {
         actor.attemptsTo(LoginSaraTask.EscribirDatoLogin(datos));
 
 
+    }
+
+    public static String Remplazardatos(){
+        String cadena = (SerenityRest.lastResponse().body().jsonPath().getString("data"));
+        String cadena1;
+        String cadena2;
+        cadena1 = cadena.replace("[", "");
+        cadena2 = cadena1.replace("]", "");
+        return cadena2;
     }
 }
 

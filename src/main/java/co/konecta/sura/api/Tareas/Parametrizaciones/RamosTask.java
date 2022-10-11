@@ -7,7 +7,7 @@ import io.restassured.http.ContentType;
 import lombok.AllArgsConstructor;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.rest.interactions.Put;
+
 
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
@@ -15,21 +15,17 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 public class RamosTask implements Task {
     private final ParametrizacionRamosModel Ramos;
 
-
     @Override
-    public <T extends Actor> void performAs(T actor) {
-
-        actor.attemptsTo(Post.to("/branchs/save")
-                .with(CreacionRamos -> CreacionRamos
-                        .contentType(ContentType.JSON)
-                        .body(Ramos))
-        );
+    public <T extends Actor> void performAs(T sergio) {
+        sergio.attemptsTo(Post.to("/branchs/save")
+                .with(requestSpecification -> requestSpecification
+                        .contentType(ContentType.JSON).body(Ramos)));
 
 
     }
 
-    public static RamosTask EscribirDatos(ParametrizacionRamosModel datos) {
-        return instrumented(RamosTask.class, datos);
+    public static RamosTask EscribirDatos(ParametrizacionRamosModel Ramos) {
+        return instrumented(RamosTask.class, Ramos);
     }
 
 }
