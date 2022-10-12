@@ -1,7 +1,7 @@
 package co.konecta.sura.api.stepdefinitions.proactive;
 
-import co.konecta.sura.api.stepdefinitions.Modelos.Otros.LoginProactive;
-import co.konecta.sura.api.stepdefinitions.Modelos.Otros.ProactiveModel;
+import co.konecta.sura.api.Modelos.Otros.LoginProactive;
+import co.konecta.sura.api.Modelos.Otros.ProactiveModel;
 import co.konecta.sura.api.Tareas.Proactive.AutenticacionTask;
 import co.konecta.sura.api.Tareas.Proactive.CierreTareaProactiveTask;
 

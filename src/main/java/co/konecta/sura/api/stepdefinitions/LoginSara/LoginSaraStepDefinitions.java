@@ -1,6 +1,6 @@
 package co.konecta.sura.api.stepdefinitions.LoginSara;
 
-import co.konecta.sura.api.stepdefinitions.Modelos.Otros.LoginSaraModel;
+import co.konecta.sura.api.Modelos.Otros.LoginSaraModel;
 import co.konecta.sura.api.Tareas.LoginSara.LoginSaraTask;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;

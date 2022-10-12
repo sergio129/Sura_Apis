@@ -1,7 +1,7 @@
 package co.konecta.sura.api.Tareas.Parametrizaciones.IndicativosMarcacion;
 
 import co.konecta.sura.api.interaccion.Post;
-import co.konecta.sura.api.stepdefinitions.Modelos.Parametrizaciones.IndicativosMarcacionModel;
+import co.konecta.sura.api.Modelos.Parametrizaciones.IndicativosMarcacion.IndicativosMarcacionModel;
 import io.restassured.http.ContentType;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;

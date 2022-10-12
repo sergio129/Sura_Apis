@@ -1,10 +1,12 @@
-package co.konecta.sura.api.stepdefinitions.Modelos.Parametrizaciones;
+package co.konecta.sura.api.Modelos.Parametrizaciones.IndicativosMarcacion;
 
 public class IndicativosMarcacionModel {
     private int city;
     private String indicative;
     private int state;
     private String token;
+
+
 
 
     public int getCity() {
@@ -38,4 +40,8 @@ public class IndicativosMarcacionModel {
     public void setToken(String token) {
         this.token = token;
     }
+
+
+
+
 }

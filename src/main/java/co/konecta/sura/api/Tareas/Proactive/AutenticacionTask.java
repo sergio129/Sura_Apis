@@ -1,6 +1,6 @@
 package co.konecta.sura.api.Tareas.Proactive;
 
-import co.konecta.sura.api.stepdefinitions.Modelos.Otros.LoginProactive;
+import co.konecta.sura.api.Modelos.Otros.LoginProactive;
 import co.konecta.sura.api.interaccion.Post;
 
 import io.restassured.http.ContentType;

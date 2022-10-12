@@ -1,6 +1,6 @@
 package co.konecta.sura.api.Tareas.LoginSara;
 
-import co.konecta.sura.api.stepdefinitions.Modelos.Otros.LoginSaraModel;
+import co.konecta.sura.api.Modelos.Otros.LoginSaraModel;
 import co.konecta.sura.api.interaccion.Post;
 import io.restassured.http.ContentType;
 import net.serenitybdd.screenplay.Actor;

@@ -1,6 +1,6 @@
 package co.konecta.sura.api.stepdefinitions.Parametrizaciones;
 
-import co.konecta.sura.api.stepdefinitions.Modelos.Parametrizaciones.ParametrizacionRamosModel;
+import co.konecta.sura.api.Modelos.Parametrizaciones.Ramos.ParametrizacionRamosModel;
 import co.konecta.sura.api.Tareas.Parametrizaciones.Ramos.RamosTask;
 import co.konecta.sura.api.stepdefinitions.LoginSara.LoginSaraStepDefinitions;
 import io.cucumber.java.Before;

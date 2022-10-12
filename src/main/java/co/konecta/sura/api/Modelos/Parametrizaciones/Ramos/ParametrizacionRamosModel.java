@@ -1,4 +1,4 @@
-package co.konecta.sura.api.stepdefinitions.Modelos.Parametrizaciones;
+package co.konecta.sura.api.Modelos.Parametrizaciones.Ramos;
 
 public class ParametrizacionRamosModel {
 

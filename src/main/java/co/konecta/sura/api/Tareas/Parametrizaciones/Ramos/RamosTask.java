@@ -1,6 +1,6 @@
 package co.konecta.sura.api.Tareas.Parametrizaciones.Ramos;
 
-import co.konecta.sura.api.stepdefinitions.Modelos.Parametrizaciones.ParametrizacionRamosModel;
+import co.konecta.sura.api.Modelos.Parametrizaciones.Ramos.ParametrizacionRamosModel;
 
 import co.konecta.sura.api.interaccion.Post;
 import io.restassured.http.ContentType;

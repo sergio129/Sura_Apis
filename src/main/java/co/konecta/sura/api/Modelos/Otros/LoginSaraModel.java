@@ -1,4 +1,4 @@
-package co.konecta.sura.api.stepdefinitions.Modelos.Otros;
+package co.konecta.sura.api.Modelos.Otros;
 
 public class LoginSaraModel {
     private String password;
