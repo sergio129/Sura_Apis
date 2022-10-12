@@ -1,4 +1,4 @@
-package co.konecta.sura.api.Modelos;
+package co.konecta.sura.api.stepdefinitions.Modelos.Otros;
 
 public class LoginProactive {
     private String userName;

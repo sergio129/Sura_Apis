@@ -1,12 +1,11 @@
 package co.konecta.sura.api.stepdefinitions.Parametrizaciones;
 
-import co.konecta.sura.api.Modelos.ParametrizacionRamosModel;
+import co.konecta.sura.api.stepdefinitions.Modelos.Parametrizaciones.ParametrizacionRamosModel;
 import co.konecta.sura.api.Tareas.Parametrizaciones.RamosTask;
 import co.konecta.sura.api.stepdefinitions.LoginSara.LoginSaraStepDefinitions;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 
