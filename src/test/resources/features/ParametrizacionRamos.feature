@@ -13,8 +13,8 @@ Feature: Creacion una parametrizacion de ramos
   @TestCreacionRamos2
   Scenario Outline: Creacion Exitosa de Ramos
     When Ingresar datos api login sara contrasena:"Colombia_2025",proveedores 0, Estrellas 5, Justifi:"", Usuario:"sergio.anaya"
-    And Ingresamos  <line>  <Nombre> <Token>
+    And Ingresamos  <linea>  <Nombre> <Token>
     Then Validamos respuesta del servicio 200
     Examples:
-      | line | Nombre       | Token  |
-      | 1578 | pruebas apis | xxxxxx |
+      | linea | Nombre        | Token  |
+      | 1578  | pruebas apis9 | xxxxxx |

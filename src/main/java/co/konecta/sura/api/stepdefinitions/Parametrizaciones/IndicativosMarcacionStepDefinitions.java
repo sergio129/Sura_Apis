@@ -37,7 +37,7 @@ public class IndicativosMarcacionStepDefinitions {
         actor.attemptsTo(IndicativosMarcacionCrearTask.EscribirDatos(indicativos));
     }
 
-    @And("^Ingresamos los datos: (.*) (.*)$")
+    @And("^Ingresamos los datos eliminar: (.*) (.*)$")
     public void ingresamosLosDatosIdToken(int id, String token) {
         this.delete.setId(id);
         this.delete.setToken(LoginSaraStepDefinitions.Remplazardatos());
