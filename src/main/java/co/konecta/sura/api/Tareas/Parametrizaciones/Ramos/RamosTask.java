@@ -1,4 +1,4 @@
-package co.konecta.sura.api.Tareas.Parametrizaciones;
+package co.konecta.sura.api.Tareas.Parametrizaciones.Ramos;
 
 import co.konecta.sura.api.stepdefinitions.Modelos.Parametrizaciones.ParametrizacionRamosModel;
 

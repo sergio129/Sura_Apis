@@ -1,7 +1,6 @@
 package co.konecta.sura.api.stepdefinitions.Parametrizaciones;
 
-import co.konecta.sura.api.Tareas.LoginSara.LoginSaraTask;
-import co.konecta.sura.api.Tareas.Parametrizaciones.IndicativosMarcacionTask;
+import co.konecta.sura.api.Tareas.Parametrizaciones.IndicativosMarcacion.IndicativosMarcacionCrearTask;
 import co.konecta.sura.api.stepdefinitions.LoginSara.LoginSaraStepDefinitions;
 import co.konecta.sura.api.stepdefinitions.Modelos.Parametrizaciones.IndicativosMarcacionModel;
 import io.cucumber.java.Before;
@@ -32,6 +31,6 @@ public class IndicativosMarcacionStepDefinitions {
         this.indicativos.setIndicative(indicative);
         this.indicativos.setState(state);
         this.indicativos.setToken(LoginSaraStepDefinitions.Remplazardatos());
-        actor.attemptsTo(IndicativosMarcacionTask.EscribirDatos(indicativos));
+        actor.attemptsTo(IndicativosMarcacionCrearTask.EscribirDatos(indicativos));
     }
 }
