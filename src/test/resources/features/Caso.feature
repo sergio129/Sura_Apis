@@ -5,10 +5,10 @@ Feature: Creacion de Expediente
 
 
   @TestCreacionCaso
-  Scenario Outline: Creacion Exitosa de indicativos de Marcacion
+  Scenario: Creacion Exitosa de Caso
     When Ingresar datos api login sara contrasena:"Colombia_2025",proveedores 0, Estrellas 5, Justifi:"", Usuario:"sergio.anaya"
     And llenamos los datos Linea: "Autos"
-    And Codigo de Seguridad: "AAA2559"
+    And Codigo de Seguridad: "AAA2560"
     And Fecha de Cita: "2022-10-12 3:0:00"
     And Fecha de Solicitud: "2022-10-12 10:58"
     And Clase de vehiculo: "Pripio"
@@ -37,14 +37,11 @@ Feature: Creacion de Expediente
     And Gestion Coordinacion: "No"
    # And Nombre:"ZAAAAAAAAAA2560"
     And Responsable: "Sergio Luis Anaya Romero"
-   # And Ingresamos los datos del casos:<linea> <codigoSeg> <FechaC> <FechaS> <ClaseV> <DepartS> <DepartSol> <DetalleDireccion> <DetalleDireccionD> <DetalleS> <Ddestino> <Dservicio> <expediente> <Amovil> <Mvehiculo> <municipio_servicio> <municipio_solicita> <nombre_solicita> <placa> <S_especiales> <TelefonoUno> <TelefonoDos> <Tservicio> <Uservicio> <categoria> <Tcliente> <description> <GestionC> <name> <responsable> <token>
-  #  And Ingresamos los datos del casos:<S_especiales>a<TelefonoUno>a<TelefonoDos>a<Tservicio>a<Uservicio>a<categoria>a<Tcliente>a<description>a<GestionC>a<name>a<responsable>a<token>
     And Token: "XXXX"
     And Creamos el caso
+    And Datos para el cambio de estado id_Caso: "XXXX", Estado: "523", Token: "XXXX"
     Then Validamos respuesta del servicio 200
-    Examples:
-      | S_especiales | TelefonoUno | TelefonoDos | Tservicio        | Uservicio   | categoria | Tcliente   | description | GestionC | name            | responsable              | token |
-      | No           | 1010101010  | 1010101010  | Abogado_En_Sitio | Laboratorio | Verde     | Intermedio | QA          | No       | ZAAAAAAAAAA2560 | Sergio Luis Anaya Romero | XXXX  |
+
 
       #  "allus_linea_c": "Linea"
 #  "case_codigo_sec": "Codigo de seguridad"

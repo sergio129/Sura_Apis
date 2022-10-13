@@ -6,6 +6,7 @@ import co.konecta.sura.api.stepdefinitions.LoginSara.LoginSaraStepDefinitions;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 
@@ -199,4 +200,10 @@ public class CasoStepsDefinition {
     public void responsable(String responsable) {
         this.casos.setResponsable_c(responsable);
     }
+
+    public static String CapturaDatosCasos() {
+        String Datos = (SerenityRest.lastResponse().body().jsonPath().getString("data.id"));
+        return Datos;
+    }
+
 }
