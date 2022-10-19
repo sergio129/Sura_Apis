@@ -1,4 +1,4 @@
-package co.konecta.sura.api.Modelos.Tareas.Casos.CambioEstados;
+package co.konecta.sura.api.Tareas.Casos.CambioEstados;
 
 import co.konecta.sura.api.Modelos.Casos.CambioDeEstados.CambioEstadosModel;
 import co.konecta.sura.api.interaccion.Post;

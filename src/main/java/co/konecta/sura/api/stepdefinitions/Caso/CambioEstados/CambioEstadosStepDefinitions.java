@@ -1,9 +1,7 @@
 package co.konecta.sura.api.stepdefinitions.Caso.CambioEstados;
 
 import co.konecta.sura.api.Modelos.Casos.CambioDeEstados.CambioEstadosModel;
-import co.konecta.sura.api.Modelos.Otros.LoginSaraModel;
-import co.konecta.sura.api.Modelos.Tareas.Casos.CambioEstados.CambioEstadosTask;
-import co.konecta.sura.api.Modelos.Tareas.LoginSara.LoginSaraTask;
+import co.konecta.sura.api.Tareas.Casos.CambioEstados.CambioEstadosTask;
 import co.konecta.sura.api.stepdefinitions.Caso.Creacion.CasoStepsDefinition;
 import co.konecta.sura.api.stepdefinitions.LoginSara.LoginSaraStepDefinitions;
 import io.cucumber.java.Before;
@@ -12,9 +10,7 @@ import io.cucumber.java.en.Given;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 
-import static co.konecta.sura.api.Modelos.Tareas.LoginSara.LoginSaraTask.Capturartoken2;
-import static co.konecta.sura.api.VariablesSesion.VaraiblesSesion.GUARDARTOKEN;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static co.konecta.sura.api.Tareas.LoginSara.LoginSaraTask.Capturartoken2;
 
 public class CambioEstadosStepDefinitions {
     Actor actor = new Actor("Sergio");

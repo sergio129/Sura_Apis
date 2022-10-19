@@ -1,4 +1,4 @@
-package co.konecta.sura.api.Modelos.Tareas.Parametrizaciones.IndicativosMarcacion;
+package co.konecta.sura.api.Tareas.Parametrizaciones.IndicativosMarcacion;
 
 import co.konecta.sura.api.Modelos.Parametrizaciones.IndicativosMarcacion.IndicativosMarcacionDeleteModel;
 import co.konecta.sura.api.interaccion.Post;
