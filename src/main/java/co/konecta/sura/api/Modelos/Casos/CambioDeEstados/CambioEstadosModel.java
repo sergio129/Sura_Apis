@@ -1,9 +1,12 @@
 package co.konecta.sura.api.Modelos.Casos.CambioDeEstados;
 
+import net.serenitybdd.screenplay.Actor;
+
 public class CambioEstadosModel {
     private String id_case;
     private String id_state;
     private String token;
+
 
     public String getId_case() {
         return id_case;

@@ -1,7 +1,7 @@
 package co.konecta.sura.api.stepdefinitions.Caso.Creacion;
 
 import co.konecta.sura.api.Modelos.Casos.Casos.CreacionCasosModel;
-import co.konecta.sura.api.Tareas.Casos.Casos.CreacionCasoTask;
+import co.konecta.sura.api.Modelos.Tareas.Casos.Casos.CreacionCasoTask;
 import co.konecta.sura.api.stepdefinitions.LoginSara.LoginSaraStepDefinitions;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
@@ -206,4 +206,14 @@ public class CasoStepsDefinition {
         return Datos;
     }
 
+    public static String CapturaToken() {
+        String Token = (SerenityRest.lastResponse().body().jsonPath().getString("data.id"));
+        return Token;
+    }
+
+
+    @And("Nombre:{string}")
+    public void nombre(String arg0) {
+        this.casos.setName(arg0);
+    }
 }

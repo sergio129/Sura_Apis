@@ -1,15 +1,20 @@
 package co.konecta.sura.api.stepdefinitions.Caso.CambioEstados;
 
 import co.konecta.sura.api.Modelos.Casos.CambioDeEstados.CambioEstadosModel;
-import co.konecta.sura.api.Tareas.Casos.CambioEstados.CambioEstadosTask;
+import co.konecta.sura.api.Modelos.Otros.LoginSaraModel;
+import co.konecta.sura.api.Modelos.Tareas.Casos.CambioEstados.CambioEstadosTask;
+import co.konecta.sura.api.Modelos.Tareas.LoginSara.LoginSaraTask;
 import co.konecta.sura.api.stepdefinitions.Caso.Creacion.CasoStepsDefinition;
 import co.konecta.sura.api.stepdefinitions.LoginSara.LoginSaraStepDefinitions;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en_scouse.An;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
+
+import static co.konecta.sura.api.Modelos.Tareas.LoginSara.LoginSaraTask.Capturartoken2;
+import static co.konecta.sura.api.VariablesSesion.VaraiblesSesion.GUARDARTOKEN;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class CambioEstadosStepDefinitions {
     Actor actor = new Actor("Sergio");
@@ -26,7 +31,7 @@ public class CambioEstadosStepDefinitions {
 
     }
 
-    @And("Ingresamos los datos para el cambio de estado IdCaso(.*), Estado(.*), (.*)")
+    @And("^Ingresamos los datos para el cambio de estado IdCaso(.*), Estado(.*), (.*)$")
     public void ingresamos_los_datos_para_el_cambio_de_estado(String IdCaso, String estado, String token) {
         this.estados.setId_case(IdCaso);
         this.estados.setId_state(estado);
@@ -37,10 +42,12 @@ public class CambioEstadosStepDefinitions {
 
     @And("Datos para el cambio de estado id_Caso: {string}, Estado: {string}, Token: {string}")
     public void datosParaElCambioDeEstadoId_CasoEstadoToken(String arg0, String arg1, String arg2) {
+
         this.estados.setId_case(CasoStepsDefinition.CapturaDatosCasos());
         this.estados.setId_state(arg1);
-        this.estados.setToken(LoginSaraStepDefinitions.Remplazardatos());
+        this.estados.setToken(Capturartoken2());
         actor.attemptsTo(CambioEstadosTask.CambiarEstado(estados));
 
     }
+
 }

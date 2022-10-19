@@ -2,8 +2,8 @@ package co.konecta.sura.api.stepdefinitions.proactive;
 
 import co.konecta.sura.api.Modelos.Otros.LoginProactive;
 import co.konecta.sura.api.Modelos.Otros.ProactiveModel;
-import co.konecta.sura.api.Tareas.Proactive.AutenticacionTask;
-import co.konecta.sura.api.Tareas.Proactive.CierreTareaProactiveTask;
+import co.konecta.sura.api.Modelos.Tareas.Proactive.AutenticacionTask;
+import co.konecta.sura.api.Modelos.Tareas.Proactive.CierreTareaProactiveTask;
 
 import co.konecta.sura.api.questions.ResponseCode;
 import io.cucumber.java.Before;

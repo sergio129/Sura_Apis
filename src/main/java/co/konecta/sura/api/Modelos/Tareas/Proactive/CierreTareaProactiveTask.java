@@ -1,4 +1,4 @@
-package co.konecta.sura.api.Tareas.Proactive;
+package co.konecta.sura.api.Modelos.Tareas.Proactive;
 
 import co.konecta.sura.api.Modelos.Otros.ProactiveModel;
 import co.konecta.sura.api.interaccion.Post;

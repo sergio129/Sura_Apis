@@ -6,9 +6,9 @@ Feature: Creacion de Expediente
 
   @TestCreacionCaso
   Scenario: Creacion Exitosa de Caso
-    When Ingresar datos api login sara contrasena:"Colombia_2025",proveedores 0, Estrellas 5, Justifi:"", Usuario:"sergio.anaya"
+    When Ingresar datos api login sara contrasena:"Colombia_2026",proveedores 0, Estrellas 5, Justifi:"", Usuario:"sergio.anaya"
     And llenamos los datos Linea: "Autos"
-    And Codigo de Seguridad: "AAA2560"
+    And Codigo de Seguridad: "AAA2598"
     And Fecha de Cita: "2022-10-12 3:0:00"
     And Fecha de Solicitud: "2022-10-12 10:58"
     And Clase de vehiculo: "Pripio"
@@ -19,7 +19,7 @@ Feature: Creacion de Expediente
     And Detalle del servicio: "Calle 28S#85-10"
     And Direccion de destino: "Calle 29S#85-10"
     And Direccion de Servicio: " Calle 26S"
-    And Numero de Expediente: "ZAAAAAAAAAA2560"
+    And Numero de Expediente: "ZAAAAAAAAAA2570"
     And Id app movil: "id15411"
     And Marca del Vehiculo: "Toyota"
     And Municipio de servicio: "Llano_Grande"
@@ -35,11 +35,11 @@ Feature: Creacion de Expediente
     And Tipo de cliente: "Intermedio"
     And Descripcion: "kkkkkkkkkkkkkkkk"
     And Gestion Coordinacion: "No"
-   # And Nombre:"ZAAAAAAAAAA2560"
+    And Nombre:"ZAAAAAAAAAA2598"
     And Responsable: "Sergio Luis Anaya Romero"
     And Token: "XXXX"
     And Creamos el caso
-    And Datos para el cambio de estado id_Caso: "XXXX", Estado: "523", Token: "XXXX"
+    And Datos para el cambio de estado id_Caso: "XXXX", Estado: "530", Token: "XXXX"
     Then Validamos respuesta del servicio 200
 
 

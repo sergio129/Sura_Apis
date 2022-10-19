@@ -1,4 +1,4 @@
-package co.konecta.sura.api.Tareas;
+package co.konecta.sura.api.Modelos.Tareas;
 
 import co.konecta.sura.api.interaccion.Post;
 

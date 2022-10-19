@@ -1,7 +1,7 @@
 package co.konecta.sura.api.stepdefinitions.LoginSara;
 
 import co.konecta.sura.api.Modelos.Otros.LoginSaraModel;
-import co.konecta.sura.api.Tareas.LoginSara.LoginSaraTask;
+import co.konecta.sura.api.Modelos.Tareas.LoginSara.LoginSaraTask;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
@@ -23,6 +23,7 @@ public class LoginSaraStepDefinitions {
 
     @Given("ingresar por la api de login de Sara")
     public void ingresar_por_la_api_de_login_de_Sara() {
+
 
     }
 

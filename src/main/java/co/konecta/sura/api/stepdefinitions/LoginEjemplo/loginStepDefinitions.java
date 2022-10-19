@@ -1,10 +1,9 @@
 package co.konecta.sura.api.stepdefinitions.LoginEjemplo;
 
-import co.konecta.sura.api.Tareas.EjemploTarea;
+import co.konecta.sura.api.Modelos.Tareas.EjemploTarea;
 import co.konecta.sura.api.questions.ResponseCode;
 
 import io.cucumber.java.Before;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

@@ -2,7 +2,7 @@
 <testsuite name="co.konecta.sura.api.runner.PrincipalRunner" tests="0" skipped="0" failures="0" errors="0" timestamp="1970-01-01T00:00:00" hostname="SERGIO" time="0.0">
   <properties/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[[Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/Caso.feature
+  <system-err><![CDATA[[Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/CambioDeEstados.feature
 [Test worker] INFO  - 
 
 -------------------------------------------------------------------------------------
@@ -19,6 +19,8 @@
  Serenity BDD Support and Training at http://serenity-bdd.info/#/trainingandsupport  
 -------------------------------------------------------------------------------------
 
+[Test worker] INFO  - Test Suite Started: hacer cambios de estados de los expedientes
+[Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/Caso.feature
 [Test worker] INFO  - Test Suite Started: Creacion de Expediente
 [Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/CierreTareaProactive.feature
 [Test worker] INFO  - Test Suite Started: poder hacer cierre de tareas de monitoreo
@@ -32,8 +34,6 @@
 [Test worker] INFO  - Test Suite Started: inicio de sesion  de usuario
 [Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/Caso.feature
 [Test worker] INFO  - Test Suite Started: Creacion de Expediente
-[Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/loginProective.feature
-[Test worker] INFO  - Test Suite Started: inicio de sesion  de usuario
 ?????????????????????????????????????????????????????????????????????????????????????
 ? Share your Cucumber Report with your team at https://reports.cucumber.io          ?
 ? Activate publishing with one of the following:                                    ?

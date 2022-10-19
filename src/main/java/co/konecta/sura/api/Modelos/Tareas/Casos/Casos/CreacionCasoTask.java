@@ -1,4 +1,4 @@
-package co.konecta.sura.api.Tareas.Casos.Casos;
+package co.konecta.sura.api.Modelos.Tareas.Casos.Casos;
 
 import co.konecta.sura.api.Modelos.Casos.Casos.CreacionCasosModel;
 import co.konecta.sura.api.interaccion.Post;
