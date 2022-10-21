@@ -46,22 +46,6 @@ public class AutenticacionProactiveStepDefinitions {
     }
 
 
-//    @And("Ingresamos id del caso y id de la tarea")
-//    public void ingresamos_id_del_caso_y_id_de_la_tarea(List<Map<String, String>> Cierre) {
-//        String data = "";
-//        actor.recall("data");
-//        actor.attemptsTo(CierreTareaProactiveTask.Cierrtarea(Cierre));
-//    }
-
-//    @And("Ingresamos id del caso y id de la tarea (.*),(.*)")
-//    public void ingresamosIdDelCasoYIdDeLaTareaIdCasoIdTarea(String IdCaso, String IdTarea) {
-//
-//        ProactiveModel datos = new ProactiveModel();
-//        datos.setIdCase(IdCaso);
-//        datos.setIdTask(IdTarea);
-//        actor.attemptsTo(CierreTareaProactiveTask.Cierrtarea(datos));
-//
-//    }
 
     @And("Ingresamos token:{string}, idCaso:{string}, idTarea{string}")
     public void ingresamosIdCasoIdTarea( String token, String IdCaso, String IdTarea) {

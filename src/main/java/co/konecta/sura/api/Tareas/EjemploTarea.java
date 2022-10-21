@@ -2,6 +2,7 @@ package co.konecta.sura.api.Tareas;
 
 import co.konecta.sura.api.interaccion.Post;
 
+import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -18,6 +19,7 @@ public class EjemploTarea implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+
         actor.attemptsTo(Post.to("/users/bot/auth")
                 .with(requestSpecification -> requestSpecification
                         .contentType(ContentType.JSON)
