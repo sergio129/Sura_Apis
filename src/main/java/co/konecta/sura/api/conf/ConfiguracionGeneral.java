@@ -18,6 +18,5 @@ public class ConfiguracionGeneral {
         RestAssured.requestSpecification = new RequestSpecBuilder()
                 .setContentType(ContentType.JSON)
                 .build();
-
     }
 }
