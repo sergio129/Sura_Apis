@@ -1,10 +1,15 @@
 package co.konecta.sura.api.stepdefinitions.Parametrizaciones;
 
 import co.konecta.sura.api.Tareas.Parametrizaciones.TiemposAlertas.TiemposAlertasTask;
+import co.konecta.sura.api.conf.ConfiguracionGeneral;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.restassured.RestAssured;
+import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.filter.log.RequestLoggingFilter;
+import io.restassured.filter.log.ResponseLoggingFilter;
+import io.restassured.http.ContentType;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 
@@ -12,10 +17,11 @@ import static co.konecta.sura.api.stepdefinitions.LoginSara.LoginSaraStepDefinit
 
 public class TiemposdeAlertasStepDefinitions {
     Actor actor = Actor.named("Sergio");
+    ConfiguracionGeneral conf = new ConfiguracionGeneral();
 
     @Before
     public void setUp() {
-        RestAssured.baseURI = restApiUrlSara;
+        conf.Configuracion();
         actor.whoCan(CallAnApi.at(restApiUrlSara));
     }
 

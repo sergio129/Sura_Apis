@@ -6,6 +6,8 @@ import io.restassured.http.ContentType;
 import lombok.AllArgsConstructor;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
+
+import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.equalTo;
 
@@ -15,9 +17,7 @@ public class TiemposAlertasTask implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        RestAssured.given()
-                .log().all()
-                .contentType(ContentType.JSON)
+        given()
                 .body("{" +
                         "\"lines\": [\"" + lines + "\"],\n" +
                         "\"services\": [\"" + services + "\"],\n" +
@@ -25,8 +25,7 @@ public class TiemposAlertasTask implements Task {
                         "\"token\": \"" + LoginSaraStepDefinitions.Remplazardatos() + "\"}")
                 .post("/alertParametrization/save")
                 .then()
-                .log().all()
-                .body("message",equalTo("Registro guardado correctamente"));
+                .body("message", equalTo("Registro guardado correctamente"));
     }
 
     public static TiemposAlertasTask Datostiempos(String lines, String services, String time, String token) {
