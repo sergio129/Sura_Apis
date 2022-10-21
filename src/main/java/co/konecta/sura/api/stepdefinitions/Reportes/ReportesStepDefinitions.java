@@ -1,4 +1,4 @@
-package co.konecta.sura.api.stepdefinitions.proactive.Reportes;
+package co.konecta.sura.api.stepdefinitions.Reportes;
 
 import co.konecta.sura.api.Modelos.Casos.Casos.CreacionCasosModel;
 import co.konecta.sura.api.Tareas.Reportes.ResportesTask;
