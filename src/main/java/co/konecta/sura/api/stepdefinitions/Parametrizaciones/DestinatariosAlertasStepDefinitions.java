@@ -2,9 +2,12 @@ package co.konecta.sura.api.stepdefinitions.Parametrizaciones;
 
 import co.konecta.sura.api.Modelos.Parametrizaciones.DestinatariosAlertas.DestinatariosAlertasModel;
 import co.konecta.sura.api.Tareas.Parametrizaciones.DestinatiosAlertas.DestinatariosAlertasTask;
+import co.konecta.sura.api.Tareas.Parametrizaciones.DestinatiosAlertas.DestinatariosAlertasTask2;
+import co.konecta.sura.api.stepdefinitions.LoginSara.LoginSaraStepDefinitions;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 
@@ -33,7 +36,8 @@ public class DestinatariosAlertasStepDefinitions {
         this.AlertasModel.setMunicipalies(municipalies);
         this.AlertasModel.setPar_name(par_name);
         this.AlertasModel.setServices(services);
-        konecta.attemptsTo(DestinatariosAlertasTask.datos(AlertasModel));
+        this.AlertasModel.setToken(LoginSaraStepDefinitions.Remplazardatos());
+        konecta.attemptsTo(DestinatariosAlertasTask2.datos(AlertasModel));
 
     }
 }
