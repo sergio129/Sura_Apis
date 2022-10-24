@@ -1,11 +1,11 @@
 package co.konecta.sura.api.Tareas.LoginSara;
 
 import co.konecta.sura.api.Modelos.Otros.LoginSaraModel;
-import co.konecta.sura.api.interaccion.Post;
 import io.restassured.http.ContentType;
 import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.rest.interactions.Post;
 
 import static co.konecta.sura.api.VariablesSesion.VaraiblesSesion.GUARDARTOKEN;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
