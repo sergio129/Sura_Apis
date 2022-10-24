@@ -1,6 +1,8 @@
 package co.konecta.sura.api.stepdefinitions.Parametrizaciones;
 
+import co.konecta.sura.api.Modelos.Parametrizaciones.BotMonitoreo.BotMonitoreoHabilitarModel;
 import co.konecta.sura.api.Modelos.Parametrizaciones.BotMonitoreo.BotmonitoreoModel;
+import co.konecta.sura.api.Tareas.Parametrizaciones.BotMonitoreo.BotMonitoreoHabilitarTask;
 import co.konecta.sura.api.Tareas.Parametrizaciones.BotMonitoreo.BotmonitoreoTask;
 import co.konecta.sura.api.conf.ConfiguracionGeneral;
 import io.cucumber.java.Before;
@@ -12,13 +14,14 @@ import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 import static co.konecta.sura.api.stepdefinitions.LoginSara.LoginSaraStepDefinitions.restApiUrlSara;
 
 public class BotMonitoreoStepDefinitions {
-    Actor actor = Actor.named("Sergio");
+    Actor konecta = Actor.named("Sergio");
     BotmonitoreoModel botModel = new BotmonitoreoModel();
+    BotMonitoreoHabilitarModel habilitar = new BotMonitoreoHabilitarModel();
 
     @Before
     public void setUp() {
-       // conf.Configuracion();
-        actor.whoCan(CallAnApi.at(restApiUrlSara));
+        // conf.Configuracion();
+        konecta.whoCan(CallAnApi.at(restApiUrlSara));
     }
 
     @Given("Crear, Editar, inabilitar parametrizacion bot de monitoreo")
@@ -37,6 +40,15 @@ public class BotMonitoreoStepDefinitions {
         botModel.setService_type(service_type);
         botModel.setSpecial_services(special_services);
         botModel.setTask_type(task_type);
-        actor.attemptsTo(BotmonitoreoTask.DatosBotMonitoreo(botModel));
+        konecta.attemptsTo(BotmonitoreoTask.DatosBotMonitoreo(botModel));
+    }
+
+    @And("Bot monitoreo eliminar Registros, Id Registro: {string}, Estado: {string}, Token: {string}")
+    public void botMonitoreoEliminarRegistrosIdRegistroEstadoToken(String arg0, String arg1, String arg2) {
+        habilitar.setPm_id(arg0);
+        habilitar.setStatus(arg1);
+        konecta.attemptsTo(BotMonitoreoHabilitarTask.Datos(habilitar));
+
+
     }
 }
