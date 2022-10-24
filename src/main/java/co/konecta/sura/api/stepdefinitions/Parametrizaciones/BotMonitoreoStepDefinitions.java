@@ -2,6 +2,7 @@ package co.konecta.sura.api.stepdefinitions.Parametrizaciones;
 
 import co.konecta.sura.api.Modelos.Parametrizaciones.BotMonitoreo.BotMonitoreoHabilitarModel;
 import co.konecta.sura.api.Modelos.Parametrizaciones.BotMonitoreo.BotmonitoreoModel;
+import co.konecta.sura.api.Tareas.LoginSara.LoginSaraTask;
 import co.konecta.sura.api.Tareas.Parametrizaciones.BotMonitoreo.BotMonitoreoHabilitarTask;
 import co.konecta.sura.api.Tareas.Parametrizaciones.BotMonitoreo.BotmonitoreoTask;
 import co.konecta.sura.api.conf.ConfiguracionGeneral;
@@ -40,6 +41,7 @@ public class BotMonitoreoStepDefinitions {
         botModel.setService_type(service_type);
         botModel.setSpecial_services(special_services);
         botModel.setTask_type(task_type);
+        botModel.setToken(LoginSaraTask.Capturartoken());
         konecta.attemptsTo(BotmonitoreoTask.DatosBotMonitoreo(botModel));
     }
 

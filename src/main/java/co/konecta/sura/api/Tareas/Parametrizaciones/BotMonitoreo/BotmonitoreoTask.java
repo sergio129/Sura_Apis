@@ -4,6 +4,7 @@ import co.konecta.sura.api.Modelos.Parametrizaciones.BotMonitoreo.BotmonitoreoMo
 import co.konecta.sura.api.stepdefinitions.LoginSara.LoginSaraStepDefinitions;
 import io.restassured.RestAssured;
 import lombok.AllArgsConstructor;
+import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 
@@ -18,7 +19,7 @@ private final BotmonitoreoModel botmodel;
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        RestAssured.given()
+        SerenityRest.given()
                 .body("{\"coordination_manager\":" + botmodel.getCoordination_manager() + " ,\n" +
                         "\"departments\": [" + botmodel.getDepartments() + "],\n" +
                         "\"lines\": [" + botmodel.getLines() + "],\n" +
@@ -27,7 +28,7 @@ private final BotmonitoreoModel botmodel;
                         "\"service_type\": [" + botmodel.getTask_type() + "],\n" +
                         "\"special_services\": [" + botmodel.getSpecial_services() + "],\n" +
                         "\"task_type\": [" + botmodel.getTask_type() + "],\n" +
-                        "\"token\": \"" + LoginSaraStepDefinitions.Remplazardatos()  + "\"}")
+                        "\"token\": \"" + botmodel.getToken()  + "\"}")
                 .post("/monitoringBotParametrization/saveParametrization")
                 .then()
                 .statusCode(200).body("message", equalTo("Registro guardado correctamente"));
