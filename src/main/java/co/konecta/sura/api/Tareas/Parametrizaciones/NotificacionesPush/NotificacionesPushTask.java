@@ -14,10 +14,10 @@ public class NotificacionesPushTask implements Task {
     public <T extends Actor> void performAs(T konecta) {
         SerenityRest.given()
                 .when()
-                .body("{\"id_line\": ["+pushModel.getId_line()+"],\n" +
-                        "\"id_role\": "+pushModel.getId_role()+",\n" +
-                        "\"id_service\": ["+pushModel.getId_service()+"],\n" +
-                        "\"id_status\": "+pushModel.getId_status()+",\n" +
+                .body("{\"id_line\": [" + pushModel.getId_line() + "],\n" +
+                        "\"id_role\": " + pushModel.getId_role() + ",\n" +
+                        "\"id_service\": [" + pushModel.getId_service() + "],\n" +
+                        "\"id_status\": " + pushModel.getId_status() + ",\n" +
                         "\"time_appointment_one\": \"" + pushModel.getTime_appointment_one() + "\",\n" +
                         "\"time_appointment_two\": \"" + pushModel.getTime_moment_two() + "\",\n" +
                         "\"time_moment_one\": \"" + pushModel.getTime_moment_one() + "\",\n" +

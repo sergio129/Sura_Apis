@@ -1,29 +1,32 @@
 package co.konecta.sura.api.stepdefinitions.Parametrizaciones;
 
+import co.konecta.sura.api.Modelos.Otros.DatosComunesModel;
 import co.konecta.sura.api.Modelos.Parametrizaciones.NotificacionesPush.NotificacionesPushModel;
 import co.konecta.sura.api.Tareas.LoginSara.LoginSaraTask;
+import co.konecta.sura.api.Tareas.Parametrizaciones.NotificacionesPush.NotificacionesPushEliminarTask;
 import co.konecta.sura.api.Tareas.Parametrizaciones.NotificacionesPush.NotificacionesPushTask;
+import co.konecta.sura.api.Tareas.Parametrizaciones.NotificacionesPush.NotificacionesPushVisualizarTask;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 
-import javax.swing.*;
-
 import static co.konecta.sura.api.conf.ConfiguracionGeneral.restApiUrlSara;
 
 
-public class NotiicacionesPushStepDefinitions {
+public class NotificacionesPushStepDefinitions {
 
     Actor konecta = new Actor("Konecta");
     NotificacionesPushModel pushModel = new NotificacionesPushModel();
+    DatosComunesModel comunesModel = new DatosComunesModel();
 
     @Before
     public void setUp() {
         // conf.Configuracion();
         konecta.whoCan(CallAnApi.at(restApiUrlSara));
     }
+
     @Given("crear , eliminar parametrizaciones notificaciones puhs")
     public void crear_eliminar_parametrizaciones_notificaciones_puhs() {
         // Write code here that turns the phrase above into concrete actions
@@ -61,5 +64,19 @@ public class NotiicacionesPushStepDefinitions {
         this.pushModel.setTime_moment_two(time_moment_two);
         this.pushModel.setToken(LoginSaraTask.Capturartoken());
         konecta.attemptsTo(NotificacionesPushTask.datos(pushModel));
+    }
+
+    @And("Visualizar parametrizacion notificaciones push Id:{string} Token:{string}")
+    public void visualizarParametrizacionNotificacionesPushIdToken(String arg0, String arg1) {
+        this.comunesModel.setId(arg0);
+        this.comunesModel.setToken(LoginSaraTask.Capturartoken());
+        konecta.attemptsTo(NotificacionesPushVisualizarTask.datos(comunesModel));
+    }
+
+    @And("Eliminar parametrizacion notificaciones push Id:{string} Token:{string}")
+    public void eliminarParametrizacionNotificacionesPushIdToken(String arg0, String arg1) {
+        this.comunesModel.setId(arg0);
+        this.comunesModel.setToken(LoginSaraTask.Capturartoken());
+        konecta.attemptsTo(NotificacionesPushEliminarTask.datos(comunesModel));
     }
 }

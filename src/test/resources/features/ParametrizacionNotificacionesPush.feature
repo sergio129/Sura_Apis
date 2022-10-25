@@ -17,3 +17,19 @@ Feature: Parametrizacion notificaciones push
     When Ingresar datos api login sara contrasena:"Colombia_2026",proveedores 0, Estrellas 5, Justifi:"", Usuario:"sergio.anaya"
     And parametrizacion notificaciones push lineas:"1575, 1578"Rol:"1"Servicios:"451, 452"Estado:"531"TiempoMoUno:"5"TiempoMoDos:"3"TiempoCitaUno:"3"tiempoCitaDos:"3"Token:"XXXXX"
     Then Validamos respuesta del servicio 200
+
+  @TestVisualizarNotificacionPush
+  Scenario: visualizar Exitosa de Parametrizacion notificacion Push
+    When Ingresar datos api login sara contrasena:"Colombia_2026",proveedores 0, Estrellas 5, Justifi:"", Usuario:"sergio.anaya"
+    And Visualizar parametrizacion notificaciones push Id:"35" Token:"xxx"
+    Then Validamos respuesta del servicio 200
+
+
+  @TestEliminarNotificacionPush
+  Scenario: visualizar Exitosa de Parametrizacion notificacion Push
+    When Ingresar datos api login sara contrasena:"Colombia_2026",proveedores 0, Estrellas 5, Justifi:"", Usuario:"sergio.anaya"
+    And Eliminar parametrizacion notificaciones push Id:"35" Token:"xxx"
+    Then Validamos respuesta del servicio 200
+
+
+
