@@ -11,7 +11,9 @@ import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 import static co.konecta.sura.api.stepdefinitions.LoginSara.LoginSaraStepDefinitions.restApiUrlSara;
 
 public class ConfiguracionGeneral {
+    public static final String restApiUrlSara = "https://saralabs.grupokonecta.co:8591/api";
     public void Configuracion() {
+
 
         RestAssured.baseURI = restApiUrlSara;
         RestAssured.filters(new RequestLoggingFilter(), new ResponseLoggingFilter());
