@@ -1,7 +1,9 @@
 package co.konecta.sura.api.stepdefinitions.Parametrizaciones;
 
+import co.konecta.sura.api.Modelos.Parametrizaciones.BotOfertamiento.BotOfertamientoHabilitarModel;
 import co.konecta.sura.api.Modelos.Parametrizaciones.BotOfertamiento.BotOfertamientoModel;
 import co.konecta.sura.api.Tareas.LoginSara.LoginSaraTask;
+import co.konecta.sura.api.Tareas.Parametrizaciones.BotOfertamiento.BotOfertamientoHabilitarTask;
 import co.konecta.sura.api.Tareas.Parametrizaciones.BotOfertamiento.BotOfertamientoTask;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
@@ -15,6 +17,7 @@ public class BotOfertamientoStepDefinitions {
 
     Actor konecta = new Actor("Konecta");
     BotOfertamientoModel ofertamientoModel = new BotOfertamientoModel();
+    BotOfertamientoHabilitarModel ofertHabilitar = new BotOfertamientoHabilitarModel();
 
     @Before
     public void setUp() {
@@ -40,5 +43,13 @@ public class BotOfertamientoStepDefinitions {
         this.ofertamientoModel.setTime(time);
         this.ofertamientoModel.setToken(LoginSaraTask.Capturartoken());
         konecta.attemptsTo(BotOfertamientoTask.DatosOfertamiento(ofertamientoModel));
+    }
+
+    @And("Cambio de estado parametrizacion bot de ofertamiento IdRegistro:{string}, Estado:{string}, Token:{string}")
+    public void cambioDeEstadoParametrizacionBotDeOfertamientoIdRegistroEstadoToken(String arg0, String arg1, String arg2) {
+        this.ofertHabilitar.setOp_id(arg0);
+        this.ofertHabilitar.setStatus(arg1);
+        this.ofertHabilitar.setToken(LoginSaraTask.Capturartoken());
+        konecta.attemptsTo(BotOfertamientoHabilitarTask.EscribirDatos(ofertHabilitar));
     }
 }
