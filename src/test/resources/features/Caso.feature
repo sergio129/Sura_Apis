@@ -1,12 +1,12 @@
 Feature: Creacion de Expediente
 
   Background:
-    Given Creacion de Casos
+    Given Ingresar datos api login sara contrasena:"Colombia_2026",proveedores 0, Estrellas 5, Justifi:"", Usuario:"sergio.anaya"
 
 
   @TestCreacionCaso
   Scenario: Creacion Exitosa de Caso
-    When Ingresar datos api login sara contrasena:"Colombia_2026",proveedores 0, Estrellas 5, Justifi:"", Usuario:"sergio.anaya"
+    When Ingresamos los datos de login
     And llenamos los datos Linea: "Autos"
     And Codigo de Seguridad: "AAA2603"
     And Fecha de Cita: "2022-10-12 3:0:00"

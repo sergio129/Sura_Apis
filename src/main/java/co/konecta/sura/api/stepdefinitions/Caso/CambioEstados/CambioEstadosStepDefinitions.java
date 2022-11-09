@@ -22,10 +22,7 @@ public class CambioEstadosStepDefinitions {
         actor.whoCan(CallAnApi.at(restApiUrlSara));
     }
 
-    @Given("poder hacer cambios de estados de los expedientes")
-    public void poder_hacer_cambios_de_estados_de_los_expedientes() {
 
-    }
 
     @And("^Ingresamos los datos para el cambio de estado IdCaso(.*), Estado(.*), (.*)$")
     public void ingresamos_los_datos_para_el_cambio_de_estado(String IdCaso, String estado, String token) {

@@ -1,11 +1,11 @@
 Feature: Parametrizacion notificaciones push
 
   Background:
-    Given crear , eliminar parametrizaciones notificaciones puhs
+    Given Ingresar datos api login sara contrasena:"Colombia_2026",proveedores 0, Estrellas 5, Justifi:"", Usuario:"sergio.anaya"
 
   @TestCracionNotificacionPush
   Scenario Outline: Creacion Exitosa de Parametrizacion notificacion Push
-    When Ingresar datos api login sara contrasena:"Colombia_2026",proveedores 0, Estrellas 5, Justifi:"", Usuario:"sergio.anaya"
+    When Ingresamos los datos de login
     And Datos parametrizacion notificaciones push<id_line>,<id_role>,<id_service>,<id_status>,<time_ap_uno>,<time_ap_dos>,<time_mo_uno>,<time_mo_dos>,<token>
     Then Validamos respuesta del servicio 200
     Examples:

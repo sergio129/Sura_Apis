@@ -48,5 +48,9 @@ public class LoginSaraStepDefinitions {
         cadena2 = cadena1.replace("]", "");
         return cadena2;
     }
+
+    @When("Ingresamos los datos de login")
+    public void ingresamosLosDatosDeLogin() {
+    }
 }
 

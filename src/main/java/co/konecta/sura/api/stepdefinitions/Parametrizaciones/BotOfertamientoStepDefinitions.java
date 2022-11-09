@@ -25,11 +25,6 @@ public class BotOfertamientoStepDefinitions {
         konecta.whoCan(CallAnApi.at(restApiUrlSara));
     }
 
-    @Given("Creacion cambio de estados de parametrizaciones bot de ofertamiento")
-    public void creacion_cambio_de_estados_de_parametrizaciones_bot_de_ofertamiento() {
-        // Write code here that turns the phrase above into concrete actions
-
-    }
 
     @And("Creacion parametrizacion bot de ofertamien, GestionCoordinacion:{string},Departamentos:{string},Lineas:{string}Municipios:{string}Nombre:{string}TipoOfertamiento:{string}TipoServicio:{string}Tiempo:{string}Token:{string}")
     public void creacionParametrizacionBotDeOfertamienGestionCoordinacionDepartamentosLineasMunicipiosNombreTipoOfertamientoTipoServicioTiempoToken(String coordination_manager, String departments, String lines, String municipalities, String name, String offert_type, String service_type, String time, String token) {
