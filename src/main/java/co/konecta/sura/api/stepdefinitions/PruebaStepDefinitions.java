@@ -20,10 +20,11 @@ public class PruebaStepDefinitions {
     @Before
     public void setUp() {
         konecta.whoCan(CallAnApi.at(restApiUrlSara));
+
     }
     @And("Informacion de prueba{string}")
     public void infomacionPruebas(String token){
-      this.tokenModel.setToken(LoginSaraTask.Capturartoken());
+        this.tokenModel.setToken(LoginSaraTask.Capturartoken());
         Integer gestionCNM = 168;
         Integer UnidadControl = 188;
         Integer Backlog = 200;
@@ -51,4 +52,18 @@ public class PruebaStepDefinitions {
         );
     }
 
+    @And("Informacion de prueba Cierre de expediente{string}")
+    public void informacionDePruebaCierreDeExpediente(String arg0) {
+        this.tokenModel.setToken(LoginSaraTask.Capturartoken());
+        konecta.attemptsTo(Post.to("/paramClosingCases/save")
+                .with(requestSpecification -> requestSpecification
+                        .contentType(ContentType.JSON)
+                        .body("{\n" +
+                                "    \"line\": [32891],\n" +
+                                "    \"service\": [32892],\n" +
+                                "    \"field\": \"224\",\n" +
+                                "    \"token\": \""+tokenModel.getToken()+"\"\n" +
+                                "}"))
+        );
+    }
 }
