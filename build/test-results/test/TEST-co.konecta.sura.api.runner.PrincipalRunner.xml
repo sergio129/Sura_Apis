@@ -26,6 +26,8 @@
 [Test worker] INFO  - Test Suite Started: poder hacer cierre de tareas de monitoreo
 [Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/LoginSara.feature
 [Test worker] INFO  - Test Suite Started: Poder loguarse en sara y generar el token
+[Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/ParametrizacionAsginacion.feature
+[Test worker] INFO  - Test Suite Started: Parametrizacion de asignacion
 [Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/ParametrizacionBotMonitoreo.feature
 [Test worker] INFO  - Test Suite Started: Parametrizacion de bot de monitoreo
 [Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/ParametrizacionBotOfertamiento.feature
@@ -52,8 +54,8 @@
 [Test worker] INFO  - Test Suite Started: Poder gestionar los roveedores en los expedientes
 [Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/loginProective.feature
 [Test worker] INFO  - Test Suite Started: inicio de sesion  de usuario
-[Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/ParametrizacionCierreExpediente.feature
-[Test worker] INFO  - Test Suite Started: feature de parametrizacion cierre de expediente
+[Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/ParametrizacionAsginacion.feature
+[Test worker] INFO  - Test Suite Started: Parametrizacion de asignacion
 ?????????????????????????????????????????????????????????????????????????????????????
 ? Share your Cucumber Report with your team at https://reports.cucumber.io          ?
 ? Activate publishing with one of the following:                                    ?

@@ -16,3 +16,9 @@ Feature: feature de prueba
     When Ingresamos los datos de login
     And Informacion de prueba Cierre de expediente"XXX"
     Then Validamos respuesta del servicio 200
+
+  @TestPruebaAsiganacion
+  Scenario: Pruebas
+    When Ingresamos los datos de login
+    And Informacion de prueba Asignacion
+    Then Validamos respuesta del servicio 200
