@@ -7,6 +7,8 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.rest.interactions.Post;
 
+import java.io.*;
+
 import static co.konecta.sura.api.VariablesSesion.VaraiblesSesion.GUARDARTOKEN;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
@@ -48,5 +50,7 @@ public class LoginSaraTask implements Task {
         token=actor.recall(GUARDARTOKEN.toString());
         return token;
     }
+
+
 
 }

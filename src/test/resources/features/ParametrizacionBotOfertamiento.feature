@@ -1,7 +1,7 @@
 Feature: Parametrizacion Bot de ofertamiento Creacion y edicion
 
   Background:
-    Given Ingresar datos api login sara contrasena:"Colombia_2026",proveedores 0, Estrellas 5, Justifi:"", Usuario:"sergio.anaya"
+    Given Ingresar datos api login sara contrasena:"Colombia_2027",proveedores 0, Estrellas 5, Justifi:"", Usuario:"sergio.anaya"
 
   @TestBotOfertamiento
   Scenario: Creacion Exitosa de Parametrizacion bot de ofertamiento

@@ -41,7 +41,7 @@ public class TareDePrueba implements Task {
                                 "    \"estCieExpediente\": [1585,1587],\n" +
                                 "    \"supplier\": [ 608, 618],\n" +
                                 "    \"taskStatus\": [1732, 1755,226 ],\n" +
-                                "    \"expirationTime\": {\"" + gestionCNM + "\": 1, \"" + UnidadControl + "\": 2, \"" + Backlog + "\": 3, \"" + RolLider + "\": 4, \""+RolCoordinacion+"\": 5,\""+RolCoordinacion+"\": 6},\n" +
+                                "    \"expirationTime\": {\"" + gestionCNM + "\": 1, \"" + UnidadControl + "\": 2, \"" + Backlog + "\": 3, \"" + RolLider + "\": 4, \"" + RolCoordinacion + "\": 5,\"" + RolCoordinacion + "\": 6},\n" +
                                 "    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NjgwOTAzMTAsImV4cCI6MTY2ODEyNjMxMCwiZGF0YSI6eyJuYW1lIjoiU2VyZ2lvIEx1aXMgQW5heWEgUm9tZXJvIiwiaWQiOiJiMjg4ZTZlZS05MmU1LTMwNDQtOTYwZC0wNTg3OGViMzEwM2MiLCJuZXdJZCI6MzM1MywiaXNfYWRtaW4iOjAsInN0YXR1cyI6IkFjdGl2ZSIsInJvbGUiOnsicm9sZV9pZCI6ImE3Yzk1ODBkLTZkMTYtMjNiMi0xZWRjLTU3ODQwNzEyYWY2ZiIsInJvbGVfbmFtZSI6IkFkbWluIEJhY2tsb2ciLCJuZXdfcm9sZV9pZCI6MjAwLCJuZXdfcm9sZV9uYW1lIjoiQWRtaW4gQmFja2xvZyJ9LCJpcF9zZXJ2ZXIiOiIxNzIuMjMuMS4xMTUiLCJpcF91c2VyIjoiMTg2LjE0NC4xNjguMjUwIiwibGVnYWxNb2R1bGVBY2Nlc3MiOjB9fQ.6u-_Uu5WAwAz5CCJvarSZEiAq4GElx3uHFAJlDu53bo\"\n" +
                                 "}"))
         );
