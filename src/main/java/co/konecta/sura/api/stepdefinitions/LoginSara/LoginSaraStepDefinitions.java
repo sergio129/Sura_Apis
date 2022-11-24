@@ -9,6 +9,7 @@ import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 
+import javax.swing.*;
 import java.io.*;
 
 import static co.konecta.sura.api.Tareas.LoginSara.LoginSaraTask.Capturartoken2;
@@ -40,17 +41,23 @@ public class LoginSaraStepDefinitions {
         this.datos.setSurveyJustification(surveyJustification);
         this.datos.setUsername(username);
         actor.attemptsTo(LoginSaraTask.EscribirDatoLogin(datos));
-        File f;
-        f = new File("Token.properties");
-        try {
 
+
+        try {
+            String ruta = "src/test/resources/Token.properties";
+            String Datos = "valido.token.user=" + Capturartoken2();
+            File f;
+            f = new File(ruta);
+            if (!f.exists()) {
+                f.createNewFile();
+            }
             FileWriter w = new FileWriter(f);
 
             BufferedWriter bw = new BufferedWriter(w);
 
             PrintWriter wr = new PrintWriter(bw);
 
-            wr.write("valido.token.user=" + Capturartoken2());//escribimos en el archivo
+            wr.write(Datos);//escribimos en el archivo
             wr.close();
             bw.close();
         } catch (IOException e) {
