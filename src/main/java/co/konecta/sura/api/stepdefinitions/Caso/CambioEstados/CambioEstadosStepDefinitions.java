@@ -2,6 +2,7 @@ package co.konecta.sura.api.stepdefinitions.Caso.CambioEstados;
 
 import co.konecta.sura.api.Modelos.Casos.CambioDeEstados.CambioEstadosModel;
 import co.konecta.sura.api.Tareas.Casos.CambioEstados.CambioEstadosTask;
+import co.konecta.sura.api.Tareas.LoginSara.LoginSaraTask;
 import co.konecta.sura.api.stepdefinitions.Caso.Creacion.CasoStepsDefinition;
 import co.konecta.sura.api.stepdefinitions.LoginSara.LoginSaraStepDefinitions;
 import io.cucumber.java.Before;
@@ -10,7 +11,7 @@ import io.cucumber.java.en.Given;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 
-import static co.konecta.sura.api.Tareas.LoginSara.LoginSaraTask.Capturartoken2;
+
 
 public class CambioEstadosStepDefinitions {
     Actor actor = new Actor("Sergio");
@@ -28,7 +29,7 @@ public class CambioEstadosStepDefinitions {
     public void ingresamos_los_datos_para_el_cambio_de_estado(String IdCaso, String estado, String token) {
         this.estados.setId_case(IdCaso);
         this.estados.setId_state(estado);
-        this.estados.setToken(LoginSaraStepDefinitions.Remplazardatos());
+        this.estados.setToken(LoginSaraTask.tokenLogin());
         actor.attemptsTo(CambioEstadosTask.CambiarEstado(estados));
     }
 
@@ -38,7 +39,7 @@ public class CambioEstadosStepDefinitions {
 
         this.estados.setId_case(CasoStepsDefinition.CapturaDatosCasos());
         this.estados.setId_state(arg1);
-        this.estados.setToken(Capturartoken2());
+        this.estados.setToken(LoginSaraTask.tokenLogin());
         actor.attemptsTo(CambioEstadosTask.CambiarEstado(estados));
 
     }

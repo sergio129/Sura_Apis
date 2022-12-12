@@ -20,7 +20,7 @@ public class TiemposdeAlertasStepDefinitions {
     Actor actor = Actor.named("Sergio");
     ConfiguracionGeneral conf = new ConfiguracionGeneral();
     TiemposAlertasModel alertasModel = new TiemposAlertasModel();
-    TokenModel token=new TokenModel();
+    TokenModel token = new TokenModel();
 
     @Before
     public void setUp() {
@@ -38,8 +38,7 @@ public class TiemposdeAlertasStepDefinitions {
         this.alertasModel.setLines(lines);
         this.alertasModel.setServices(services);
         this.alertasModel.setTime(time);
-        this.alertasModel.setToken(Serenity.sessionVariableCalled("token"));
-        this.token.setToken(Serenity.sessionVariableCalled("token"));
-        actor.attemptsTo(TiemposAlertasTask.Datostiempos(alertasModel,token));
+        this.token.setToken(LoginSaraTask.tokenLogin());
+        actor.attemptsTo(TiemposAlertasTask.Datostiempos(alertasModel, token));
     }
 }

@@ -26,7 +26,7 @@ public class LoginSaraTask implements Task {
                 .with(requestLogin -> requestLogin
                         .contentType(ContentType.JSON)
                         .body(login)));
-      Serenity.setSessionVariable("token").to(Capturartoken2());
+      Serenity.setSessionVariable("token").to(Capturartoken());
     }
 
     public static LoginSaraTask EscribirDatoLogin(LoginSaraModel login) {
@@ -45,15 +45,9 @@ public class LoginSaraTask implements Task {
         return cadena2;
     }
 
-
-    public static String Capturartoken2() {
-        String token, token2;
-        Actor actor = new Actor("Sergio");
-        actor.remember(GUARDARTOKEN.toString(), Capturartoken());
-        token=actor.recall(GUARDARTOKEN.toString());
-        return token;
-    }
-
+public static String tokenLogin(){
+        return Serenity.sessionVariableCalled("token");
+}
 
 
 }
