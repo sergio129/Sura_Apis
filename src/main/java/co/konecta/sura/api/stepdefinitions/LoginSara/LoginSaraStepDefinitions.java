@@ -9,10 +9,10 @@ import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 
-import javax.swing.*;
 import java.io.*;
+import java.util.ResourceBundle;
 
-import static co.konecta.sura.api.Tareas.LoginSara.LoginSaraTask.Capturartoken2;
+import static co.konecta.sura.api.Tareas.LoginSara.LoginSaraTask.Capturartoken;
 
 public class LoginSaraStepDefinitions {
 
@@ -24,17 +24,20 @@ public class LoginSaraStepDefinitions {
     public void setUp() {
 
         actor.whoCan(CallAnApi.at(restApiUrlSara));
+
+
     }
 
     @Given("ingresar por la api de login de Sara")
     public void ingresar_por_la_api_de_login_de_Sara() {
 
-
     }
 
 
+
+
     @When("Ingresar datos api login sara contrasena:{string},proveedores {int}, Estrellas {int}, Justifi:{string}, Usuario:{string}")
-    public void ingresarDatosApiLoginSaraContrasenaProveedoresEstrellasJustifiUsuario(String password, int provider, int survey, String surveyJustification, String username) {
+    public void ingresarDatosApiLoginSaraContrasenaProveedoresEstrellasJustifiUsuario(String password, int provider, int survey, String surveyJustification, String username) throws InterruptedException {
         this.datos.setPassword(password);
         this.datos.setProvider(provider);
         this.datos.setSurvey(survey);
@@ -42,10 +45,9 @@ public class LoginSaraStepDefinitions {
         this.datos.setUsername(username);
         actor.attemptsTo(LoginSaraTask.EscribirDatoLogin(datos));
 
-
         try {
             String ruta = "src/test/resources/Token.properties";
-            String Datos = "valido.token.user=" + Capturartoken2();
+            String Datos = "valido.token.user=" + Capturartoken();
             File f;
             f = new File(ruta);
             if (!f.exists()) {
@@ -58,11 +60,13 @@ public class LoginSaraStepDefinitions {
             PrintWriter wr = new PrintWriter(bw);
 
             wr.write(Datos);//escribimos en el archivo
-            wr.close();
+
             bw.close();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
+
+
 
     }
 
@@ -76,8 +80,7 @@ public class LoginSaraStepDefinitions {
     }
 
     @When("Ingresamos los datos de login")
-    public void ingresamosLosDatosDeLogin() {
-
+    public void ingresamosLosDatosDeLogin() throws InterruptedException {
     }
 }
 

@@ -2,6 +2,7 @@ package co.konecta.sura.api.Tareas.LoginSara;
 
 import co.konecta.sura.api.Modelos.Otros.LoginSaraModel;
 import io.restassured.http.ContentType;
+import net.serenitybdd.core.Serenity;
 import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -25,18 +26,20 @@ public class LoginSaraTask implements Task {
                 .with(requestLogin -> requestLogin
                         .contentType(ContentType.JSON)
                         .body(login)));
-
-
+      Serenity.setSessionVariable("token").to(Capturartoken2());
     }
 
     public static LoginSaraTask EscribirDatoLogin(LoginSaraModel login) {
         return instrumented(LoginSaraTask.class, login);
     }
 
+
+
     public static String Capturartoken() {
         String cadena = (SerenityRest.lastResponse().body().jsonPath().getString("data"));
         String cadena1;
         String cadena2;
+        String cadena3;
         cadena1 = cadena.replace("[", "");
         cadena2 = cadena1.replace("]", "");
         return cadena2;
