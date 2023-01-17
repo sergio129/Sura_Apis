@@ -1,7 +1,7 @@
 Feature: Parametrizacion de tiempos de alertas
 
   Background:
-    Given Ingresar datos api login sara contrasena:"Colombia_2027",proveedores 0, Estrellas 5, Justifi:"", Usuario:"sergio.anaya"
+    Given Ingresar datos api login sara
 
   @Testiemposalertas
   Scenario Outline: Creacion Exitosa tiempos de alertas

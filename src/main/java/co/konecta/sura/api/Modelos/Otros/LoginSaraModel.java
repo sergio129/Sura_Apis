@@ -2,10 +2,11 @@ package co.konecta.sura.api.Modelos.Otros;
 
 public class LoginSaraModel {
     private String password;
-    private Integer provider;
-    private Integer survey;
+    private String provider;
+    private String survey;
     private String surveyJustification;
     private String username;
+
 
     public String getPassword() {
         return password;
@@ -15,19 +16,19 @@ public class LoginSaraModel {
         this.password = password;
     }
 
-    public Integer getProvider() {
+    public String getProvider() {
         return provider;
     }
 
-    public void setProvider(Integer provider) {
+    public void setProvider(String provider) {
         this.provider = provider;
     }
 
-    public Integer getSurvey() {
+    public String getSurvey() {
         return survey;
     }
 
-    public void setSurvey(Integer survey) {
+    public void setSurvey(String survey) {
         this.survey = survey;
     }
 

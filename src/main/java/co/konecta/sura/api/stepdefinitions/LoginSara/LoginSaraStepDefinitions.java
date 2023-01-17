@@ -2,6 +2,7 @@ package co.konecta.sura.api.stepdefinitions.LoginSara;
 
 import co.konecta.sura.api.Modelos.Otros.LoginSaraModel;
 import co.konecta.sura.api.Tareas.LoginSara.LoginSaraTask;
+import co.konecta.sura.api.Utilidades.Login.TestUserCreator;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
@@ -37,7 +38,7 @@ public class LoginSaraStepDefinitions {
 
 
     @When("Ingresar datos api login sara contrasena:{string},proveedores {int}, Estrellas {int}, Justifi:{string}, Usuario:{string}")
-    public void ingresarDatosApiLoginSaraContrasenaProveedoresEstrellasJustifiUsuario(String password, int provider, int survey, String surveyJustification, String username) throws InterruptedException {
+    public void ingresarDatosApiLoginSaraContrasenaProveedoresEstrellasJustifiUsuario(String password, String provider, String survey, String surveyJustification, String username) throws InterruptedException {
         this.datos.setPassword(password);
         this.datos.setProvider(provider);
         this.datos.setSurvey(survey);
@@ -79,8 +80,15 @@ public class LoginSaraStepDefinitions {
         return cadena2;
     }
 
-    @When("Ingresamos los datos de login")
+    @When("Gestionamos apis de Sara")
     public void ingresamosLosDatosDeLogin() throws InterruptedException {
+    }
+
+
+    @When("Ingresar datos api login sara")
+    public void ingresarDatosApiLoginSara() {
+        LoginSaraModel login = TestUserCreator.UsuarioValido();
+        actor.attemptsTo(LoginSaraTask.EscribirDatoLogin(login));
     }
 }
 

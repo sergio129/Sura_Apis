@@ -1,10 +1,10 @@
 Feature: hacer cambios de estados de los expedientes
 
   Background:
-    Given Ingresar datos api login sara contrasena:"Colombia_2026",proveedores 0, Estrellas 5, Justifi:"", Usuario:"sergio.anaya"
+    Given Ingresar datos api login sara
   @testCambioDeEstado
   Scenario Outline: Cambio de estado Exitoso Con id de expediente
-    When Ingresamos los datos de login
+    When Gestionamos apis de Sara
     And Ingresamos los datos para el cambio de estado IdCaso<id_case>, Estado<id_state>, token<token>
     Then Validamos respuesta del servicio 200
     Examples:
@@ -13,6 +13,6 @@ Feature: hacer cambios de estados de los expedientes
 
   @tes2
   Scenario: Cambio de estado con expediente creado
-    When Ingresar datos api login sara contrasena:"Colombia_2025",proveedores 0, Estrellas 5, Justifi:"", Usuario:"sergio.anaya"
+    When Gestionamos apis de Sara
     And Datos para el cambio de estado id_Caso: "XXXX", Estado: "523", Token: "XXXX"
     Then Validamos respuesta del servicio 200

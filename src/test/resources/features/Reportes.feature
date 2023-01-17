@@ -5,7 +5,7 @@ Feature: Poder loguarse en sara y generar el token
 
   @TesGenerarReporte
  Scenario: Reporte
-    When Ingresamos los datos de login
+    When Gestionamos apis de Sara
     And Ingresamos los datos para exportar el informe Fecha Inicio:"2022-10-21", Fecha fin:"2022-10-21", tipo de reporte:"monitoring_time", token:"XXXX"
 
     Then Validamos respuesta del servicio 200
