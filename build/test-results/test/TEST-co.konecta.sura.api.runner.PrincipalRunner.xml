@@ -2,22 +2,9 @@
 <testsuite name="co.konecta.sura.api.runner.PrincipalRunner" tests="0" skipped="0" failures="0" errors="0" timestamp="1970-01-01T00:00:00" hostname="SERGIO" time="0.0">
   <properties/>
   <system-out><![CDATA[
-Failed scenarios:
-file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/SubModuloGestionProveedores.feature:7 # Gestion Exitosa Proveedores
-
-1 Scenarios (1 failed)
-6 Steps (1 failed, 5 passed)
-0m9,994s
-
-
-java.lang.AssertionError: 
-Expected: <200>
-     but: was <404>
-	at net.serenitybdd.screenplay.ErrorTally.throwSummaryExceptionFrom(ErrorTally.java:38)
-	at net.serenitybdd.screenplay.ErrorTally.reportAnyErrors(ErrorTally.java:32)
-	at net.serenitybdd.screenplay.Actor.should(Actor.java:353)
-	at co.konecta.sura.api.stepdefinitions.proactive.AutenticacionProactiveStepDefinitions.validamosRespuestaDelServicio(AutenticacionProactiveStepDefinitions.java:70)
-	at ?.Validamos respuesta del servicio 200(file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/SubModuloGestionProveedores.feature:12)
+1 Scenarios (1 passed)
+3 Steps (3 passed)
+0m4,830s
 
 
 ]]></system-out>
@@ -44,6 +31,8 @@ Expected: <200>
 [Test worker] INFO  - Test Suite Started: Creacion de Expediente
 [Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/CierreTareaProactive.feature
 [Test worker] INFO  - Test Suite Started: poder hacer cierre de tareas de monitoreo
+[Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/EstadoDeReclamaciones.feature
+[Test worker] INFO  - Test Suite Started: Modulo de estado de reclamaciones
 [Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/LoginSara.feature
 [Test worker] INFO  - Test Suite Started: Poder loguarse en sara y generar el token
 [Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/ParametrizacionAsginacion.feature
@@ -74,11 +63,11 @@ Expected: <200>
 [Test worker] INFO  - Test Suite Started: Poder gestionar los roveedores en los expedientes
 [Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/loginProective.feature
 [Test worker] INFO  - Test Suite Started: inicio de sesion  de usuario
-[Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/SubModuloGestionProveedores.feature
-[Test worker] INFO  - Test Suite Started: Poder gestionar los roveedores en los expedientes
+[Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/EstadoDeReclamaciones.feature
+[Test worker] INFO  - Test Suite Started: Modulo de estado de reclamaciones
 ????????????????????????????????????????????????????????????????????????????
 ? View your Cucumber Report at:                                            ?
-? https://reports.cucumber.io/reports/94eff5a4-579b-4e96-9eac-4ca39ef1e661 ?
+? https://reports.cucumber.io/reports/fa4796c9-a9e3-47da-b6be-3efc8c4a70fd ?
 ?                                                                          ?
 ? This report will self-destruct in 24h.                                   ?
 ? Keep reports forever: https://reports.cucumber.io/profile                ?
