@@ -4,6 +4,7 @@ import co.konecta.sura.api.Modelos.Parametrizaciones.DestinatariosAlertas.Destin
 import co.konecta.sura.api.stepdefinitions.LoginSara.LoginSaraStepDefinitions;
 import io.restassured.RestAssured;
 import lombok.AllArgsConstructor;
+import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 
@@ -14,7 +15,7 @@ public class DestinatariosAlertasTask implements Task {
     private final DestinatariosAlertasModel alertasModel;
     @Override
     public <T extends Actor> void performAs(T actor) {
-        RestAssured.given()
+        SerenityRest.given()
                 .body("{\"departments\": ["+alertasModel.getDepartments()+"],\n" +
                         "\"emails\": \""+alertasModel.getEmails()+"\",\n" +
                         "\"lines\": ["+alertasModel.getLines()+"],\n" +
