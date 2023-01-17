@@ -1,6 +1,7 @@
 package co.konecta.sura.api.Utilidades.Login;
 
 import co.konecta.sura.api.Modelos.Otros.LoginSaraModel;
+import co.konecta.sura.api.Tareas.EstadoReclamaciones.EstadoReclamacionesLoginTask;
 
 
 public class TestUserCreator {
