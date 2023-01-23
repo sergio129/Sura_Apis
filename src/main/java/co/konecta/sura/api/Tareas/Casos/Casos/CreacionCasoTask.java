@@ -13,8 +13,8 @@ import static org.hamcrest.Matchers.equalTo;
 
 @AllArgsConstructor
 public class CreacionCasoTask implements Task {
- private final CreacionCasosModel model;
- private final TokenModel tokenModel;
+    private final CreacionCasosModel model;
+    private final TokenModel tokenModel;
 
 
     @Override
@@ -22,23 +22,23 @@ public class CreacionCasoTask implements Task {
         SerenityRest.given()
 
                 .body("{\n" +
-                        "    \"allus_linea_c\": \"Autos\",\n" +
-                        "\"case_codigo_sec\": \"AAA2602\",\n" +
-                        "\"case_date_appointment\": \"2022-10-12 3:0:00\",\n" +
-                        "\"case_date_request\": \"2022-10-12 10:58\",\n" +
-                        "\"caso_clase_vehiculo\": \"Pripio\",\n" +
-                        "\"caso_depto_servicio\": \"05\",\n" +
-                        "\"caso_depto_solicita\": \"05\",\n" +
-                        "\"caso_detalle_direccion\": \"Calle 26S#85-10\",\n" +
-                        "\"caso_detalle_direccion_destino\": \"Calle 100\",\n" +
-                        "\"caso_detalle_servicio\": \"asdasd\",\n" +
-                        "\"caso_direccion_destino\": \"Calle 50\",\n" +
-                        "\"caso_direccion_servicio\": \"Calle 26S#85-10\",\n" +
-                        "\"caso_expediente\":\"ZAAAAAAAAAA2602\",\n" +
-                        "\"caso_id_app_movil\": \"id5454\",\n" +
-                        "\"caso_marca_vehiculo\": \"Chevrole\",\n" +
-                        "\"caso_municipio_servicio\": \"Llano_Grande\",\n" +
-                        "\"caso_municipio_solicita\": \"Llano_Grande\",\n" +
+                        "    \"allus_linea_c\": \"" + model.getAllus_linea_c() + "\",\n" +
+                        "\"case_codigo_sec\": \"" + model.getCase_codigo_sec() + "\",\n" +
+                        "\"case_date_appointment\": \"" + model.getCase_date_appointment() + "\",\n" +
+                        "\"case_date_request\": \"" + model.getCase_date_request() + "\",\n" +
+                        "\"caso_clase_vehiculo\": \"" + model.getCaso_clase_vehiculo() + "\",\n" +
+                        "\"caso_depto_servicio\": \"" + model.getCaso_depto_servicio() + "\",\n" +
+                        "\"caso_depto_solicita\": \"" + model.getCaso_depto_solicita() + "\",\n" +
+                        "\"caso_detalle_direccion\": \"" + model.getCaso_detalle_direccion() + "\",\n" +
+                        "\"caso_detalle_direccion_destino\": \"" + model.getCaso_detalle_direccion_destino() + "\",\n" +
+                        "\"caso_detalle_servicio\": \"" + model.getCaso_detalle_servicio() + "\",\n" +
+                        "\"caso_direccion_destino\": \"" + model.getCaso_direccion_destino() + "\",\n" +
+                        "\"caso_direccion_servicio\": \"" + model.getCaso_direccion_destino() + "\",\n" +
+                        "\"caso_expediente\":\"" + model.getCaso_expediente() + "\",\n" +
+                        "\"caso_id_app_movil\": \"" + model.getCaso_id_app_movil() + "\",\n" +
+                        "\"caso_marca_vehiculo\": \"" + model.getCaso_marca_vehiculo() + "\",\n" +
+                        "\"caso_municipio_servicio\": \"" + model.getCaso_municipio_servicio() + "\",\n" +
+                        "\"caso_municipio_solicita\": \"" + model.getCaso_municipio_solicita() + "\",\n" +
                         "\"caso_nombre_solicita\": \"puebas\",\n" +
                         "\"caso_placa\": \"SVG85R\",\n" +
                         "\"caso_servicios_especiales\": \"Soat_y_Guardaines\",\n" +
@@ -54,12 +54,13 @@ public class CreacionCasoTask implements Task {
                         "\"name\": \"ZAAAAAAAAAA2602\",\n" +
                         "\"responsable_c\": \"Sergio Luis Anaya Romero\",\n" +
                         "\"token\": \n" +
-                        "\""+tokenModel.getToken()+"\"}")
+                        "\"" + tokenModel.getToken() + "\"}")
                 .post("casesClaimRequest/save")
                 .then()
                 .body("message", equalTo("Registro guardado correctamente"));
     }
-    public static CreacionCasoTask Escribir(CreacionCasosModel model,  TokenModel tokenModel){
-        return new CreacionCasoTask(model,tokenModel);
+
+    public static CreacionCasoTask Escribir(CreacionCasosModel model, TokenModel tokenModel) {
+        return new CreacionCasoTask(model, tokenModel);
     }
 }
