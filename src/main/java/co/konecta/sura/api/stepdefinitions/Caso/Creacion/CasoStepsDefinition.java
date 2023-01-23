@@ -1,7 +1,10 @@
 package co.konecta.sura.api.stepdefinitions.Caso.Creacion;
 
 import co.konecta.sura.api.Modelos.Casos.Casos.CreacionCasosModel;
+import co.konecta.sura.api.Modelos.Token.TokenModel;
 import co.konecta.sura.api.Tareas.Casos.Casos.CreacionCasoTask;
+import co.konecta.sura.api.Tareas.LoginSara.LoginSaraTask;
+import co.konecta.sura.api.Utilidades.Datos_Crear_Caso;
 import co.konecta.sura.api.stepdefinitions.LoginSara.LoginSaraStepDefinitions;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
@@ -16,6 +19,7 @@ public class CasoStepsDefinition {
 
     Actor actor = Actor.named("Sergio");
     CreacionCasosModel casos = new CreacionCasosModel();
+    TokenModel token = new TokenModel();
 
     @Before
     public void setUp() {
@@ -54,7 +58,7 @@ public class CasoStepsDefinition {
 
     @And("Creamos el caso")
     public void creamosElCaso() {
-        actor.attemptsTo(CreacionCasoTask.Escribir(casos));
+        //actor.attemptsTo(CreacionCasoTask.Escribir(mo,token));
     }
 
     @And("Fecha de Cita: {string}")
@@ -216,4 +220,13 @@ public class CasoStepsDefinition {
     public void nombre(String arg0) {
         this.casos.setName(arg0);
     }
+
+    @And("Llenamos los datos en el archivo CreacionCaso.Properties")
+    public void llenamosLosDatosEnElArchivoCreacionCasoProperties() {
+        CreacionCasosModel model = Datos_Crear_Caso.casosModel();
+        this.token.setToken(LoginSaraTask.tokenLogin());
+        actor.attemptsTo(CreacionCasoTask.Escribir(model,token));
+
+    }
+
 }

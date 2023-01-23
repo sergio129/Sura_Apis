@@ -1,8 +1,7 @@
 Feature: Creacion de Expediente
 
   Background:
-    Given ingresar por la api de login de Sara
-
+    Given Ingresar datos api login sara
 
   @TestCreacionCaso
   Scenario: Creacion Exitosa de Caso
@@ -11,7 +10,7 @@ Feature: Creacion de Expediente
     And Codigo de Seguridad: "AAA2603"
     And Fecha de Cita: "2022-10-12 3:0:00"
     And Fecha de Solicitud: "2022-10-12 10:58"
-    And Clase de vehiculo: "Pripio"
+    And Clase de vehiculo: "Propio"
     And Departamento de servicio: "05"
     And Departamento Solicita: "05"
     And Detalle de la direccion: "Calle 26S#85-10"
@@ -41,6 +40,14 @@ Feature: Creacion de Expediente
     And Creamos el caso
     And Datos para el cambio de estado id_Caso: "XXXX", Estado: "530", Token: "XXXX"
     Then Validamos respuesta del servicio 200
+
+
+  @TestCreacionCase
+  Scenario: Creacion Exitosa de Caso
+    When Gestionamos apis de Sara
+    And Llenamos los datos en el archivo CreacionCaso.Properties
+    Then Validamos respuesta del servicio 200
+
 
 
       #  "allus_linea_c": "Linea"
