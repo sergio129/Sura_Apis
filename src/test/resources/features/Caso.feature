@@ -46,6 +46,7 @@ Feature: Creacion de Expediente
   Scenario: Creacion Exitosa de Caso
     When Gestionamos apis de Sara
     And Llenamos los datos en el archivo CreacionCaso.Properties
+    And Datos para el cambio de estado id_Caso: "XXXX", Estado: "530", Token: "XXXX"
     Then Validamos respuesta del servicio 200
 
 

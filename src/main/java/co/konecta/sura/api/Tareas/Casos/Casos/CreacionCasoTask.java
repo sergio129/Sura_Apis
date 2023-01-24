@@ -39,23 +39,23 @@ public class CreacionCasoTask implements Task {
                         "\"caso_marca_vehiculo\": \"" + model.getCaso_marca_vehiculo() + "\",\n" +
                         "\"caso_municipio_servicio\": \"" + model.getCaso_municipio_servicio() + "\",\n" +
                         "\"caso_municipio_solicita\": \"" + model.getCaso_municipio_solicita() + "\",\n" +
-                        "\"caso_nombre_solicita\": \"puebas\",\n" +
-                        "\"caso_placa\": \"SVG85R\",\n" +
-                        "\"caso_servicios_especiales\": \"Soat_y_Guardaines\",\n" +
-                        "\"caso_telefono_1\": \"1010101010\",\n" +
-                        "\"caso_telefono_2\": \"1111111111\",\n" +
-                        "\"caso_tipo_servicio\": \"Abogado_En_Sitio\",\n" +
-                        "\"caso_ubicacion_servicio\": \"Laboratorio\",\n" +
-                        "\"category\": \"Amarillo\",\n" +
-                        "\"customer_type\": \"Intermedio\",\n" +
-                        "\"description\": \"Pruebas Apis\",\n" +
-                        "\"expediente_de_click\": \"No\",\n" +
+                        "\"caso_nombre_solicita\": \"" + model.getCaso_nombre_solicita() + "\",\n" +
+                        "\"caso_placa\": \"" + model.getCaso_placa() + "\",\n" +
+                        "\"caso_servicios_especiales\": \"" + model.getCaso_servicios_especiales() + "\",\n" +
+                        "\"caso_telefono_1\": \"" + model.getCaso_telefono_1() + "\",\n" +
+                        "\"caso_telefono_2\": \"" + model.getCaso_telefono_2() + "\",\n" +
+                        "\"caso_tipo_servicio\": \"" + model.getCaso_tipo_servicio() + "\",\n" +
+                        "\"caso_ubicacion_servicio\": \"" + model.getCaso_ubicacion_servicio() + "\",\n" +
+                        "\"category\": \"" + model.getCategory() + "\",\n" +
+                        "\"customer_type\": \"" + model.getCustomer_type() + "\",\n" +
+                        "\"description\": \"" + model.getDescription() + "\",\n" +
+                        "\"expediente_de_click\": \"" + model.getExpediente_de_click() + "\",\n" +
                         "\"incompleto_clic_c\": null,\n" +
-                        "\"name\": \"ZAAAAAAAAAA2602\",\n" +
-                        "\"responsable_c\": \"Sergio Luis Anaya Romero\",\n" +
+                        "\"name\": \"" + model.getName() + "\",\n" +
+                        "\"responsable_c\": \"" + model.getResponsable_c() + "\",\n" +
                         "\"token\": \n" +
                         "\"" + tokenModel.getToken() + "\"}")
-                .post("casesClaimRequest/save")
+                .post("case/saveCases")
                 .then()
                 .body("message", equalTo("Registro guardado correctamente"));
     }
