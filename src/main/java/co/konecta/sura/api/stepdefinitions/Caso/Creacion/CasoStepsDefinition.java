@@ -205,16 +205,6 @@ public class CasoStepsDefinition {
         this.casos.setResponsable_c(responsable);
     }
 
-    public static String CapturaDatosCasos() {
-        String Datos = (SerenityRest.lastResponse().body().jsonPath().getString("data.id"));
-        return Datos;
-    }
-
-    public static String CapturaToken() {
-        String Token = (SerenityRest.lastResponse().body().jsonPath().getString("data.id"));
-        return Token;
-    }
-
 
     @And("Nombre:{string}")
     public void nombre(String arg0) {

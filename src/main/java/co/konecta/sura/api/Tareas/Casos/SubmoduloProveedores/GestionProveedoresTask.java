@@ -3,12 +3,12 @@ package co.konecta.sura.api.Tareas.Casos.SubmoduloProveedores;
 import co.konecta.sura.api.Modelos.Casos.Casos.CreacionCasosModel;
 import co.konecta.sura.api.Modelos.Casos.SubmoduloGestionProveedores.GestionProveedoresModel;
 import co.konecta.sura.api.Modelos.Token.TokenModel;
-import co.konecta.sura.api.interaccion.Post;
 import io.restassured.http.ContentType;
 import lombok.AllArgsConstructor;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.rest.interactions.Post;
 
 import java.util.List;
 import java.util.Map;
@@ -27,7 +27,6 @@ private final GestionProveedoresModel proveedor;
                         .with(requestSpecification -> requestSpecification
                                 .contentType(ContentType.JSON)
                                 .body(proveedor)));
-
     }
 
     public static GestionProveedoresTask InfoProveedor(GestionProveedoresModel proveedor) {

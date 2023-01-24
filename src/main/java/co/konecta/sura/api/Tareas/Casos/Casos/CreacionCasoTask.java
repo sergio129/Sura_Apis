@@ -4,6 +4,7 @@ import co.konecta.sura.api.Modelos.Casos.Casos.CreacionCasosModel;
 import co.konecta.sura.api.Modelos.Token.TokenModel;
 import io.restassured.http.ContentType;
 import lombok.AllArgsConstructor;
+import net.serenitybdd.core.Serenity;
 import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -58,9 +59,18 @@ public class CreacionCasoTask implements Task {
                 .post("case/saveCases")
                 .then()
                 .body("message", equalTo("Registro guardado correctamente"));
+        Serenity.setSessionVariable("idCase").to(CapturarCaseID());
     }
 
     public static CreacionCasoTask Escribir(CreacionCasosModel model, TokenModel tokenModel) {
         return new CreacionCasoTask(model, tokenModel);
+    }
+    public static String CapturarCaseID() {
+        String cadena = (SerenityRest.lastResponse().body().jsonPath().getString("data.id"));
+        return cadena;
+    }
+
+    public static String CaseID(){
+        return Serenity.sessionVariableCalled("idCase");
     }
 }

@@ -3,7 +3,10 @@ package co.konecta.sura.api.stepdefinitions.Caso.SubmoduloGestionProveedor;
 import co.konecta.sura.api.Modelos.Casos.Casos.CreacionCasosModel;
 import co.konecta.sura.api.Modelos.Casos.SubmoduloGestionProveedores.GestionProveedoresModel;
 import co.konecta.sura.api.Modelos.Token.TokenModel;
+import co.konecta.sura.api.Tareas.Casos.Casos.CreacionCasoTask;
 import co.konecta.sura.api.Tareas.Casos.SubmoduloProveedores.GestionProveedoresTask;
+import co.konecta.sura.api.Tareas.LoginSara.LoginSaraTask;
+import co.konecta.sura.api.Utilidades.Datos_Gestion_Proveedores;
 import co.konecta.sura.api.stepdefinitions.LoginSara.LoginSaraStepDefinitions;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
@@ -79,5 +82,14 @@ public class GestionProveedorStepDefinitions {
         this.proveedor.setTime_monitoring_site(time_monitoring_site);
         this.proveedor.setToken(LoginSaraStepDefinitions.Remplazardatos());
         actor.attemptsTo(GestionProveedoresTask.InfoProveedor(proveedor));
+    }
+
+    @And("Llenamos los datos del proveedor en el archivo GestionProveedor.Properties")
+    public void llenamosLosDatosDelProveedorEnElArchivoGestionProveedorProperties() {
+        GestionProveedoresModel proveedoresModel = Datos_Gestion_Proveedores.proveedoresModel();
+        proveedoresModel.setCase_id(CreacionCasoTask.CaseID());
+        proveedoresModel.setToken(LoginSaraTask.tokenLogin());
+        actor.attemptsTo(GestionProveedoresTask.InfoProveedor(proveedoresModel));
+
     }
 }

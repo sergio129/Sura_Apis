@@ -1,11 +1,11 @@
 package co.konecta.sura.api.Tareas.Casos.CambioEstados;
 
 import co.konecta.sura.api.Modelos.Casos.CambioDeEstados.CambioEstadosModel;
-import co.konecta.sura.api.interaccion.Post;
 import io.restassured.http.ContentType;
 import lombok.AllArgsConstructor;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.rest.interactions.Post;
 
 @AllArgsConstructor
 public class CambioEstadosTask implements Task {

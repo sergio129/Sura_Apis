@@ -2,6 +2,7 @@ package co.konecta.sura.api.stepdefinitions.Caso.CambioEstados;
 
 import co.konecta.sura.api.Modelos.Casos.CambioDeEstados.CambioEstadosModel;
 import co.konecta.sura.api.Tareas.Casos.CambioEstados.CambioEstadosTask;
+import co.konecta.sura.api.Tareas.Casos.Casos.CreacionCasoTask;
 import co.konecta.sura.api.Tareas.LoginSara.LoginSaraTask;
 import co.konecta.sura.api.stepdefinitions.Caso.Creacion.CasoStepsDefinition;
 import co.konecta.sura.api.stepdefinitions.LoginSara.LoginSaraStepDefinitions;
@@ -37,7 +38,7 @@ public class CambioEstadosStepDefinitions {
     @And("Datos para el cambio de estado id_Caso: {string}, Estado: {string}, Token: {string}")
     public void datosParaElCambioDeEstadoId_CasoEstadoToken(String arg0, String arg1, String arg2) {
 
-        this.estados.setId_case(CasoStepsDefinition.CapturaDatosCasos());
+        this.estados.setId_case(CreacionCasoTask.CaseID());
         this.estados.setId_state(arg1);
         this.estados.setToken(LoginSaraTask.tokenLogin());
         actor.attemptsTo(CambioEstadosTask.CambiarEstado(estados));
