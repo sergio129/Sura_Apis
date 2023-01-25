@@ -4,6 +4,7 @@ import co.konecta.sura.api.Modelos.Casos.Casos.CreacionCasosModel;
 import co.konecta.sura.api.Modelos.Casos.DocumentacionCNM.DocumentacionCNMModel;
 import co.konecta.sura.api.Modelos.Casos.Novedades.NovedadesModel;
 import co.konecta.sura.api.Modelos.Token.TokenModel;
+import co.konecta.sura.api.Tareas.Casos.Casos.BuscarCasoTask;
 import co.konecta.sura.api.Tareas.Casos.Casos.CreacionCasoTask;
 import co.konecta.sura.api.Tareas.Casos.DocumentacionCNM.DocumentacionCNMTask;
 import co.konecta.sura.api.Tareas.Casos.Novedades.NovedadesTask;
@@ -63,5 +64,11 @@ public class CasoStepsDefinition {
         cnmModel.setFiledComplaint(filedComplaint);
         cnmModel.setDescription(description);
         actor.attemptsTo(DocumentacionCNMTask.EscribirDatosDocumentacionCNM(cnmModel));
+    }
+
+    @And("Numero de Expediente a Buscar:{string}")
+    public void numeroDeExpedienteABuscar(String arg0) {
+        token.setToken(LoginSaraTask.tokenLogin());
+        actor.attemptsTo(BuscarCasoTask.NumeroExpediente(token,arg0));
     }
 }

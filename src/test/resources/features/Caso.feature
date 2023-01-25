@@ -3,10 +3,10 @@ Feature: Creacion de Expediente
   Background:
     Given Ingresar datos api login sara
 
-  @TestCreacionCaso
+  @TestBuscarExpediente
   Scenario: Creacion Exitosa de Caso
     When Gestionamos apis de Sara
-    And Datos para el cambio de estado id_Caso: "XXXX", Estado: "530", Token: "XXXX"
+    And Numero de Expediente a Buscar:"H14AAAAAAAA2602"
     Then Validamos respuesta del servicio 200
 
 
