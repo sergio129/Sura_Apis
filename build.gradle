@@ -3,6 +3,10 @@ repositories {
     mavenLocal()
 
     mavenCentral()
+    maven {
+        url 'https://repo.clojars.org'
+        name 'Clojars'
+    }
 }
 
 buildscript {
@@ -23,11 +27,12 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'net.serenity-bdd.aggregator'
 apply plugin: 'application'
+defaultTasks 'clean'
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
-mainClassName = ':test --tests "co.konecta.sura.certificate.runners.PrincipalRunner"'
+mainClassName = ':test --tests "co.konecta.sura.api.runner.PrincipalRunner"'
 
 sourceCompatibility = 1.8
 
@@ -41,8 +46,7 @@ dependencies {
     implementation 'net.serenity-bdd:serenity-screenplay-rest:3.4.1'
     implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.14.0'
     testImplementation 'io.rest-assured:rest-assured:5.2.0'
-
-    testImplementation 'com.github.javafaker:javafaker:1.0.2'
+    implementation 'com.github.javafaker:javafaker:1.0.2'
 
 
     implementation 'net.serenity-bdd:serenity-ensure:3.4.1'

@@ -51,12 +51,8 @@ public class Datos_Crear_Caso {
         casosModel.setExpediente_de_click(Datos_Crear_Caso.getDatos_Crear_Caso("Caso.expediente_de_click"));
         casosModel.setName(Datos_Crear_Caso.getDatos_Crear_Caso("Caso.name"));
         casosModel.setResponsable_c(Datos_Crear_Caso.getDatos_Crear_Caso("Caso.responsable_c"));
-
-
-
         return casosModel;
     }
-
 }
 
 

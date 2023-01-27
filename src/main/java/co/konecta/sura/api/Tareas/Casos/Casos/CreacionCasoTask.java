@@ -9,6 +9,7 @@ import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.rest.interactions.Post;
+import com.github.javafaker.Faker;
 
 import static org.hamcrest.Matchers.equalTo;
 
@@ -20,6 +21,7 @@ public class CreacionCasoTask implements Task {
 
     @Override
     public <T extends Actor> void performAs(T t) {
+        String Exp = NumeroExpediente();
         SerenityRest.given()
 
                 .body("{\n" +
@@ -35,7 +37,7 @@ public class CreacionCasoTask implements Task {
                         "\"caso_detalle_servicio\": \"" + model.getCaso_detalle_servicio() + "\",\n" +
                         "\"caso_direccion_destino\": \"" + model.getCaso_direccion_destino() + "\",\n" +
                         "\"caso_direccion_servicio\": \"" + model.getCaso_direccion_destino() + "\",\n" +
-                        "\"caso_expediente\":\"" + model.getCaso_expediente() + "\",\n" +
+                        "\"caso_expediente\":\"" + Exp + model.getCase_codigo_sec() + "\",\n" +
                         "\"caso_id_app_movil\": \"" + model.getCaso_id_app_movil() + "\",\n" +
                         "\"caso_marca_vehiculo\": \"" + model.getCaso_marca_vehiculo() + "\",\n" +
                         "\"caso_municipio_servicio\": \"" + model.getCaso_municipio_servicio() + "\",\n" +
@@ -52,7 +54,7 @@ public class CreacionCasoTask implements Task {
                         "\"description\": \"" + model.getDescription() + "\",\n" +
                         "\"expediente_de_click\": \"" + model.getExpediente_de_click() + "\",\n" +
                         "\"incompleto_clic_c\": null,\n" +
-                        "\"name\": \"" + model.getName() + "\",\n" +
+                        "\"name\": \"" + Exp + model.getCase_codigo_sec() + "\",\n" +
                         "\"responsable_c\": \"" + model.getResponsable_c() + "\",\n" +
                         "\"token\": \n" +
                         "\"" + tokenModel.getToken() + "\"}")
@@ -65,12 +67,21 @@ public class CreacionCasoTask implements Task {
     public static CreacionCasoTask Escribir(CreacionCasosModel model, TokenModel tokenModel) {
         return new CreacionCasoTask(model, tokenModel);
     }
+
     public static String CapturarCaseID() {
         String cadena = (SerenityRest.lastResponse().body().jsonPath().getString("data.id"));
         return cadena;
     }
 
-    public static String CaseID(){
+    public static String CaseID() {
         return Serenity.sessionVariableCalled("idCase");
     }
+
+    public static String NumeroExpediente() {
+        Faker faker = new Faker();
+        String NumeroCaso = faker.random().hex(8);
+        return NumeroCaso;
+    }
+
+
 }
