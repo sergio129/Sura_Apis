@@ -1,0 +1,1 @@
+gradlew clean build :test --tests "co.konecta.sura.api.runner.PrincipalRunner"

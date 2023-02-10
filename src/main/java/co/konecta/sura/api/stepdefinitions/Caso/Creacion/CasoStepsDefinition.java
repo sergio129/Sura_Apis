@@ -2,11 +2,14 @@ package co.konecta.sura.api.stepdefinitions.Caso.Creacion;
 
 import co.konecta.sura.api.Modelos.Casos.Casos.CreacionCasosModel;
 import co.konecta.sura.api.Modelos.Casos.DocumentacionCNM.DocumentacionCNMModel;
+import co.konecta.sura.api.Modelos.Casos.EscalamientoSura.EscalamientoSuraModel;
 import co.konecta.sura.api.Modelos.Casos.Novedades.NovedadesModel;
 import co.konecta.sura.api.Modelos.Token.TokenModel;
 import co.konecta.sura.api.Tareas.Casos.Casos.BuscarCasoTask;
 import co.konecta.sura.api.Tareas.Casos.Casos.CreacionCasoTask;
 import co.konecta.sura.api.Tareas.Casos.DocumentacionCNM.DocumentacionCNMTask;
+import co.konecta.sura.api.Tareas.Casos.EscalamientoSura.EscalamientoSuraTask;
+import co.konecta.sura.api.Tareas.Casos.Finalizacion.FinalizacionTask;
 import co.konecta.sura.api.Tareas.Casos.Novedades.NovedadesTask;
 import co.konecta.sura.api.Tareas.LoginSara.LoginSaraTask;
 import co.konecta.sura.api.Utilidades.Datos_Crear_Caso;
@@ -23,8 +26,9 @@ import static co.konecta.sura.api.stepdefinitions.LoginSara.LoginSaraStepDefinit
 public class CasoStepsDefinition {
 
     Actor actor = Actor.named("Sergio");
-    NovedadesModel model =new NovedadesModel();
-    DocumentacionCNMModel cnmModel=new DocumentacionCNMModel();
+    NovedadesModel model = new NovedadesModel();
+    DocumentacionCNMModel cnmModel = new DocumentacionCNMModel();
+    EscalamientoSuraModel suraModel = new EscalamientoSuraModel();
     TokenModel token = new TokenModel();
 
     @Before
@@ -38,11 +42,12 @@ public class CasoStepsDefinition {
         // Write code here that turns the phrase above into concrete actions
 
     }
+
     @And("Llenamos los datos en el archivo CreacionCaso.Properties")
     public void llenamosLosDatosEnElArchivoCreacionCasoProperties() {
         CreacionCasosModel model = Datos_Crear_Caso.casosModel();
         this.token.setToken(LoginSaraTask.tokenLogin());
-        actor.attemptsTo(CreacionCasoTask.Escribir(model,token));
+        actor.attemptsTo(CreacionCasoTask.Escribir(model, token));
     }
 
     @And("Datos Novedades Reporta novedad:{string}, Cauda novedad:{string},Genera Radicado:{string}, NRadicado:{string}, Observaciones:{string}")
@@ -54,7 +59,7 @@ public class CasoStepsDefinition {
         this.model.setObservation(observation);
         this.model.setCase_id(CreacionCasoTask.CaseID());
         this.token.setToken(LoginSaraTask.tokenLogin());
-        actor.attemptsTo(NovedadesTask.EscribirDatosNovedades(token,model));
+        actor.attemptsTo(NovedadesTask.EscribirDatosNovedades(token, model));
     }
 
     @And("Datos Documentacion CNM Persona gestion:{string}, Genera queja:{string}, Radicado:{string}, Observaciones:{string}")
@@ -69,6 +74,23 @@ public class CasoStepsDefinition {
     @And("Numero de Expediente a Buscar:{string}")
     public void numeroDeExpedienteABuscar(String arg0) {
         token.setToken(LoginSaraTask.tokenLogin());
-        actor.attemptsTo(BuscarCasoTask.NumeroExpediente(token,arg0));
+        actor.attemptsTo(BuscarCasoTask.NumeroExpediente(token, arg0));
+    }
+
+    @And("Datos Modulo Finalizacion, Finalizar con:{string}, Tipo respuesta:{string}, Observaciones: {string}")
+    public void datosModuloFinalizacionFinalizarConTipoRespuestaObservaciones(String endingWith, String typeResponse, String description) {
+        actor.attemptsTo(FinalizacionTask.EscribirDatosFinzalizacion(endingWith, typeResponse, description));
+    }
+
+
+    @And("Datos Escalamiento Sura, Tipo Gestion:{string}, Persona Gestion:{string}, Tipo Respuesta:{string}, Genera Queja:{string},Radicado de la Queja:{string} Observaciones:{string}")
+    public void datosEscalamientoSuraTipoGestionPersonaGestionTipoRespuestaGeneraQuejaRadicadoDeLaQuejaObservaciones(String typeManagement, String personManagement, String typeReply, String generateComplaint, String filedComplaint, String observation) {
+        suraModel.setTypeManagement(typeManagement);
+        suraModel.setPersonManagement(personManagement);
+        suraModel.setTypeReply(typeReply);
+        suraModel.setGenerateComplaint(generateComplaint);
+        suraModel.setFiledComplaint(filedComplaint);
+        suraModel.setObservation(observation);
+        actor.attemptsTo(EscalamientoSuraTask.EscribirDatos(suraModel));
     }
 }
