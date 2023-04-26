@@ -88,7 +88,8 @@ public class LoginSaraStepDefinitions {
     @When("Ingresar datos api login sara")
     public void ingresarDatosApiLoginSara() {
         LoginSaraModel login = TestUserCreator.UsuarioValido();
-        actor.attemptsTo(LoginSaraTask.EscribirDatoLogin(login));
+
+            actor.attemptsTo(LoginSaraTask.EscribirDatoLogin(login));
     }
 }
 

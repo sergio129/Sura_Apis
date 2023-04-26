@@ -13,7 +13,6 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 
 
-
 public class CambioEstadosStepDefinitions {
     Actor actor = new Actor("Sergio");
     public static final String restApiUrlSara = "https://saralabs.grupokonecta.co:8591/api";
@@ -25,13 +24,15 @@ public class CambioEstadosStepDefinitions {
     }
 
 
-
     @And("^Ingresamos los datos para el cambio de estado IdCaso(.*), Estado(.*), (.*)$")
     public void ingresamos_los_datos_para_el_cambio_de_estado(String IdCaso, String estado, String token) {
         this.estados.setId_case(IdCaso);
         this.estados.setId_state(estado);
         this.estados.setToken(LoginSaraTask.tokenLogin());
-        actor.attemptsTo(CambioEstadosTask.CambiarEstado(estados));
+        for (int i = 0; i <= 500;
+             i++) {
+            actor.attemptsTo(CambioEstadosTask.CambiarEstado(estados));
+        }
     }
 
 
@@ -42,7 +43,6 @@ public class CambioEstadosStepDefinitions {
         this.estados.setId_state(arg1);
         this.estados.setToken(LoginSaraTask.tokenLogin());
         actor.attemptsTo(CambioEstadosTask.CambiarEstado(estados));
-
     }
 
 

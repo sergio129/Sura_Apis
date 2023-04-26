@@ -29,6 +29,7 @@ public class TareDePrueba implements Task {
         actor.attemptsTo(Post.to("/parameterization-uck/save")
                 .with(requestSpecification -> requestSpecification
                         .contentType(ContentType.JSON)
+
                         .body("{\n" +
                                 "    \"lines\": [ 1575, 1578 ],\n" +
                                 "    \"services\": [451,  452],\n" +

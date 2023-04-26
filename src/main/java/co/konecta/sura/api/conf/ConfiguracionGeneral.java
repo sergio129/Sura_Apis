@@ -10,8 +10,6 @@ import io.restassured.http.ContentType;
 public class ConfiguracionGeneral {
     public static final String restApiUrlSara = "https://saralabs.grupokonecta.co:8591/api";
     public void Configuracion() {
-
-
         RestAssured.baseURI = restApiUrlSara;
         RestAssured.filters(new RequestLoggingFilter(), new ResponseLoggingFilter());
         RestAssured.requestSpecification = new RequestSpecBuilder()

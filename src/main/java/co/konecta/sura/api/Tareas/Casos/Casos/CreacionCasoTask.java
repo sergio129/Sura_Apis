@@ -23,7 +23,7 @@ public class CreacionCasoTask implements Task {
     public <T extends Actor> void performAs(T t) {
         String Exp = NumeroExpediente();
         SerenityRest.given()
-
+                
                 .body("{\n" +
                         "    \"allus_linea_c\": \"" + model.getAllus_linea_c() + "\",\n" +
                         "\"case_codigo_sec\": \"" + model.getCase_codigo_sec() + "\",\n" +

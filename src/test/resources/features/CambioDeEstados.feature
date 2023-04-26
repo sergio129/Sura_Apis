@@ -9,7 +9,7 @@ Feature: hacer cambios de estados de los expedientes
     Then Validamos respuesta del servicio 200
     Examples:
       | id_case                              | id_state | token |
-      | 82ca457b-90bd-3a84-bfe6-e1a81daa0eba | 530      | xxxxx |
+      | ff5d22ac-9837-334e-87a1-46f2bcffad9a | 530      | xxxxx |
 
   @tes2
   Scenario: Cambio de estado con expediente creado

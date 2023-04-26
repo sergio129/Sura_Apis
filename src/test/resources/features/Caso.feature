@@ -43,4 +43,12 @@ Feature: Creacion de Expediente
     Then Validamos respuesta del servicio 200
 
 
+  @TestCreacionCaso
+  Scenario: Creacion Exitosa de Caso
+    When Gestionamos apis de Sara
+    And Llenamos los datos en el archivo CreacionCaso.Properties
+    Then Validamos respuesta del servicio 200
+
+
+
 
