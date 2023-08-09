@@ -1,9 +1,13 @@
 package co.konecta.sura.api.stepdefinitions.LoginEjemplo;
 
+import co.konecta.sura.api.Modelos.Token.TokenModel;
 import co.konecta.sura.api.Tareas.EjemploTarea;
+import co.konecta.sura.api.Tareas.LoginSara.LoginSaraTask;
+import co.konecta.sura.api.interaccion.BusquedaCasoAvanzadoInteraction;
 import co.konecta.sura.api.questions.ResponseCode;
 
 import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -17,6 +21,7 @@ import static org.hamcrest.core.IsEqual.equalTo;
 public class loginStepDefinitions {
     private static final String restApiUrl = "https://saralabs.grupokonecta.co:8591/api";
     Actor actor = Actor.named("Sergio");
+    TokenModel token = new TokenModel();
     @Before
     public void setUp(){
 
@@ -43,5 +48,13 @@ public class loginStepDefinitions {
         actor.attemptsTo(EjemploTarea.Info(info));
     }
 
+    @And("Hacemos la busqueda de casos")
+    public void hacemosLaBusquedaDeCasos() {
+       token.setToken(LoginSaraTask.Capturartoken());
+        for (int i = 0; i <= 1000;
+             i++) {
+            actor.attemptsTo(BusquedaCasoAvanzadoInteraction.datos(token));
+        }
 
+    }
 }

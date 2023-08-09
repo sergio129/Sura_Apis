@@ -3,21 +3,60 @@
   <properties/>
   <system-out><![CDATA[
 Failed scenarios:
-file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/Caso.feature:47 # Creacion Exitosa de Caso
+file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/PruebasCarga.feature:7 # Login Exitoso
 
 1 Scenarios (1 failed)
-4 Steps (1 failed, 3 passed)
-0m15,600s
+4 Steps (1 failed, 1 skipped, 2 passed)
+0m6.901s
 
 
-java.lang.AssertionError: 
-Expected: <200>
-     but: was <404>
-	at net.serenitybdd.screenplay.ErrorTally.throwSummaryExceptionFrom(ErrorTally.java:38)
-	at net.serenitybdd.screenplay.ErrorTally.reportAnyErrors(ErrorTally.java:32)
-	at net.serenitybdd.screenplay.Actor.should(Actor.java:353)
-	at co.konecta.sura.api.stepdefinitions.proactive.AutenticacionProactiveStepDefinitions.validamosRespuestaDelServicio(AutenticacionProactiveStepDefinitions.java:70)
-	at ?.Validamos respuesta del servicio 200(file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/Caso.feature:50)
+java.lang.AssertionError: 1 expectation failed.
+JSON path message doesn't match.
+Expected: Registros listados correctamente
+  Actual: El Token es inválido
+
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:49)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:270)
+	at io.restassured.specification.ResponseSpecification$body$0.callCurrent(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:49)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:212)
+	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:117)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:244)
+	at co.konecta.sura.api.interaccion.BusquedaCasoAvanzadoInteraction.performAs(BusquedaCasoAvanzadoInteraction.java:19)
+	at net.serenitybdd.screenplay.Actor.performTask(Actor.java:283)
+	at net.serenitybdd.screenplay.Actor.perform(Actor.java:262)
+	at net.serenitybdd.screenplay.Actor.performWithoutReporting(Actor.java:246)
+	at net.serenitybdd.screenplay.Actor.attemptsTo(Actor.java:201)
+	at net.serenitybdd.screenplay.Actor.attemptsTo(Actor.java:210)
+	at co.konecta.sura.api.stepdefinitions.LoginEjemplo.loginStepDefinitions.hacemosLaBusquedaDeCasos(loginStepDefinitions.java:56)
+	at ?.Hacemos la busqueda de casos(file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/PruebasCarga.feature:9)
 
 
 ]]></system-out>
@@ -72,24 +111,26 @@ Expected: <200>
 [Test worker] INFO  - Test Suite Started: Parametrizacion de tiempos de alertas
 [Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/Pruebas.feature
 [Test worker] INFO  - Test Suite Started: feature de prueba
+[Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/PruebasCarga.feature
+[Test worker] INFO  - Test Suite Started: Poder hacer buqueda de casos avanzado
 [Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/Reportes.feature
 [Test worker] INFO  - Test Suite Started: Poder loguarse en sara y generar el token
 [Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/SubModuloGestionProveedores.feature
 [Test worker] INFO  - Test Suite Started: Poder gestionar los roveedores en los expedientes
 [Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/loginProective.feature
 [Test worker] INFO  - Test Suite Started: inicio de sesion  de usuario
-[Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/Caso.feature
-[Test worker] INFO  - Test Suite Started: Creacion de Expediente
+[Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Sergio/Documents/Sura_Apis/src/test/resources/features/PruebasCarga.feature
+[Test worker] INFO  - Test Suite Started: Poder hacer buqueda de casos avanzado
 [pool-2-thread-1] INFO serenity.reporting - 
----------------------------------------
-| TEST NAME:   ?[1mCreacion Exitosa de Caso?[0m
+----------------------------
+| TEST NAME:   ?[1mLogin Exitoso?[0m
 | RESULT:      ?[91mFailing?[0m
-| REQUIREMENT: Creacion de Expediente
-| REPORT:      ?[96mfile:///C:/Users/Sergio/Documents/Sura_Apis/target/site/serenity/2bb93c46eecf5057e2c183f923cd08d33e3f7be8bcb7a34e4002de37151bbcf1.html?[0m
----------------------------------------
+| REQUIREMENT: Poder hacer buqueda de casos avanzado
+| REPORT:      ?[96mfile:///C:/Users/Sergio/Documents/Sura_Apis/target/site/serenity/827a4a9e1f03fce1b9bffa63d1abe7acf1c53facdb2d5aea6297ad1e2c05e6d8.html?[0m
+----------------------------
 ????????????????????????????????????????????????????????????????????????????
 ? View your Cucumber Report at:                                            ?
-? https://reports.cucumber.io/reports/f894252f-1bd1-4ada-b4cc-cc03961f4010 ?
+? https://reports.cucumber.io/reports/440755a2-4b85-4f07-bd9c-535c6b3d3605 ?
 ?                                                                          ?
 ? This report will self-destruct in 24h.                                   ?
 ? Keep reports forever: https://reports.cucumber.io/profile                ?
